@@ -75,6 +75,28 @@ export default {
   display: none;
 }
 
+.top-nav-menu {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+
+.top-nav-menu .nav-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.navbar-icon {
+  padding: 0.5rem;
+  font-size: x-large;
+}
+
 @media screen and (max-width: 768px) {
   .nav-menu {
     padding-top: 10px;
