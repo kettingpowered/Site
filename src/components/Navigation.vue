@@ -3,11 +3,18 @@
     <font-awesome-icon :icon="this.showMobileMenu ? 'bars-staggered' : 'bars'" id="mobile-button" @click="showMenu" />
     <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
       <img class="logo" src="@/assets/ketting.png" alt="Ketting logo">
-      <ul class="nav-items">
+      <menu class="nav-items">
         <router-link class="nav-item" to="/">Home</router-link>
         <router-link class="nav-item" :to="{ name: 'FAQ' }">Faq</router-link>
         <router-link class="nav-item" :to="{ name: 'Download' }">Download</router-link>
-      </ul>
+      </menu>
+     <div class="flex-grow"></div>
+     <a class="navbar-icon" href="https://discord.kettingpowered.org">
+	<font-awesome-icon :icon="['fab', 'discord']" />
+    </a>
+    <a class="navbar-icon" href="https://github.com/kettingpowered/Ketting-1-20-x">
+        <font-awesome-icon :icon="['fab', 'github']" />
+    </a>
     </div>
   </div>
 </template>
