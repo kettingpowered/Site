@@ -5,16 +5,16 @@
       <img class="logo" src="@/assets/ketting.png" alt="Ketting logo">
       <menu class="nav-items">
         <router-link class="nav-item" to="/">Home</router-link>
-        <router-link class="nav-item" :to="{ name: 'FAQ' }">Faq</router-link>
+        <router-link class="nav-item" :to="{ name: 'FAQ' }">FAQ</router-link>
         <router-link class="nav-item" :to="{ name: 'Download' }">Download</router-link>
       </menu>
-     <div class="flex-grow"></div>
-     <a class="navbar-icon" href="https://discord.kettingpowered.org">
-	<font-awesome-icon :icon="['fab', 'discord']" />
-    </a>
-    <a class="navbar-icon" href="https://github.com/kettingpowered/Ketting-1-20-x">
+      <div class="flex-grow"></div>
+      <a class="navbar-icon" href="https://discord.kettingpowered.org">
+        <font-awesome-icon :icon="['fab', 'discord']" />
+      </a>
+      <a class="navbar-icon" href="https://github.com/kettingpowered/Ketting-1-20-x">
         <font-awesome-icon :icon="['fab', 'github']" />
-    </a>
+      </a>
     </div>
   </div>
 </template>
@@ -65,7 +65,7 @@ export default {
   text-decoration: none;
   color: black;
 
-  transition: color 0.3s;
+  transition: color 0.2s;
 }
 .nav-item:hover {
   color: white;
