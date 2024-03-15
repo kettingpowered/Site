@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-menu">
+  <div class="top-nav-menu nav-menu">
     <font-awesome-icon :icon="this.showMobileMenu ? 'bars-staggered' : 'bars'" id="mobile-button" @click="showMenu" />
     <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
       <img class="logo" src="@/assets/ketting.png" alt="Ketting logo">
