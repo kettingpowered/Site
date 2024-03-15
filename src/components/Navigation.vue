@@ -8,7 +8,7 @@
         <router-link class="nav-item" :to="{ name: 'FAQ' }">FAQ</router-link>
         <router-link class="nav-item" :to="{ name: 'Download' }">Download</router-link>
       </menu>
-      <div class="flex-grow"></div>
+      <div style="flex-grow: 1"></div>
       <a class="navbar-icon" href="https://discord.kettingpowered.org">
         <font-awesome-icon :icon="['fab', 'discord']" />
       </a>
@@ -86,10 +86,6 @@ export default {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-.flex-grow {
-  flex-grow: 1;
 }
 
 .navbar-icon {
