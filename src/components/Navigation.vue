@@ -2,12 +2,10 @@
   <div class="top-nav-menu nav-menu">
     <div class="mobile-button-group">
       <font-awesome-icon :icon="this.showMobileMenu ? 'bars-staggered' : 'bars'" id="mobile-button" @click="showMenu" />
-      <img class="logo" src="@/assets/ketting.png" alt="Ketting logo">
-      <h2 class="logo-header">Ketting</h2>
+      <Logo id="logo-mobile" />
     </div>
     <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
-      <img class="logo" src="@/assets/ketting.png" alt="Ketting logo">
-      <h2 class="logo-header">Ketting</h2>
+      <Logo id="logo" />
       <menu class="nav-items">
         <router-link class="nav-item" to="/">Home</router-link>
         <router-link class="nav-item" :to="{ name: 'FAQ' }">FAQ</router-link>
@@ -27,15 +25,21 @@
 </template>
 
 <script>
+import Logo from "./Logo.vue";
+
 export default {
   data() {
     return {
       showMobileMenu: false,
     };
-  },methods: {
+  },
+  methods: {
     showMenu() {
       this.showMobileMenu = !this.showMobileMenu;
     },
+  },
+  components: {
+    Logo,
   },
 };
 </script>
@@ -50,22 +54,6 @@ export default {
   display: flex;
   padding: 0 15px;
   align-items: center;
-}
-
-.logo {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.logo-header {
-  font-size: 1.5rem;
-  margin-left: 3px;
-
-  background: linear-gradient(45deg, #901c6e, #62869d, #ea6e19, #fae033, #f2c6a4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  user-select: none;
 }
 
 .nav-items {
@@ -153,14 +141,11 @@ export default {
     font-size: 1.5em;
     margin-left: 15px;
   }
-  .logo {
+
+  #logo-mobile {
     margin-left: 20px;
   }
-
-  .nav-content .logo {
-    display: none;
-  }
-  .nav-content .logo-header {
+  #logo {
     display: none;
   }
 
