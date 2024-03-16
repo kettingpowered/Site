@@ -1,20 +1,27 @@
 <template>
   <div class="top-nav-menu nav-menu">
-    <font-awesome-icon :icon="this.showMobileMenu ? 'bars-staggered' : 'bars'" id="mobile-button" @click="showMenu" />
+    <div class="mobile-button-group">
+      <font-awesome-icon :icon="this.showMobileMenu ? 'bars-staggered' : 'bars'" id="mobile-button" @click="showMenu" />
+      <img class="logo" src="@/assets/ketting.png" alt="Ketting logo">
+      <h2 class="logo-header">Ketting</h2>
+    </div>
     <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
       <img class="logo" src="@/assets/ketting.png" alt="Ketting logo">
+      <h2 class="logo-header">Ketting</h2>
       <menu class="nav-items">
         <router-link class="nav-item" to="/">Home</router-link>
         <router-link class="nav-item" :to="{ name: 'FAQ' }">FAQ</router-link>
         <router-link class="nav-item" :to="{ name: 'Download' }">Download</router-link>
       </menu>
       <div style="flex-grow: 1"></div>
-      <a class="navbar-icon" href="https://discord.kettingpowered.org">
-        <font-awesome-icon :icon="['fab', 'discord']" />
-      </a>
-      <a class="navbar-icon" href="https://github.com/kettingpowered/Ketting-1-20-x">
-        <font-awesome-icon :icon="['fab', 'github']" />
-      </a>
+      <div class="navbar-icons">
+        <a class="navbar-icon" href="https://discord.kettingpowered.org">
+          <font-awesome-icon :icon="['fab', 'discord']" />
+        </a>
+        <a class="navbar-icon" href="https://github.com/kettingpowered/Ketting-1-20-x">
+          <font-awesome-icon :icon="['fab', 'github']" />
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -37,18 +44,28 @@ export default {
 .nav-menu {
   background-color: #AAA;
   color: black;
-  padding: 3px 0;
 }
 
 .nav-content {
   display: flex;
-  padding: 5px 15px;
+  padding: 0 15px;
   align-items: center;
 }
 
 .logo {
-  width: 30px;
-  margin-right: 20px;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.logo-header {
+  font-size: 1.5rem;
+  margin-left: 3px;
+
+  background: linear-gradient(45deg, #901c6e, #62869d, #ea6e19, #fae033, #f2c6a4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  user-select: none;
 }
 
 .nav-items {
@@ -56,8 +73,6 @@ export default {
   justify-content: center;
   align-items: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-item {
@@ -69,10 +84,6 @@ export default {
 }
 .nav-item:hover {
   color: white;
-}
-
-#mobile-button {
-  display: none;
 }
 
 .top-nav-menu {
@@ -89,13 +100,16 @@ export default {
 }
 
 .navbar-icon {
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
   font-size: x-large;
+}
+
+.mobile-button-group {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
   .nav-menu {
-    padding-top: 10px;
     position: absolute;
     width: 100%;
   }
@@ -114,25 +128,44 @@ export default {
     flex-direction: column;
     z-index: 100;
     position: relative;
-  }
-
-  .logo {
-    margin: 0;
+    align-items: normal;
   }
 
   .nav-items {
     flex-direction: column;
-    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: normal;
+
+    padding: 0;
   }
 
   .nav-item {
     margin: 5px 0;
   }
 
+  .mobile-button-group {
+    display: flex;
+    align-items: center;
+  }
+
   #mobile-button {
-    display: block;
-    padding: 0 10px 10px 10px;
+    width: 23px;
     font-size: 1.5em;
+    margin-left: 15px;
+  }
+  .logo {
+    margin-left: 20px;
+  }
+
+  .nav-content .logo {
+    display: none;
+  }
+  .nav-content .logo-header {
+    display: none;
+  }
+
+  .navbar-icons {
+    border-top: 2px solid #000;
   }
 }
 </style>
