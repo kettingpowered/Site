@@ -1,27 +1,23 @@
-<script>
-export default {
-  name: "Home"
-}
-</script>
-
 <template>
-<main>
-  <section id="main">
-    <div id="info">
-      <h1>Ketting</h1>
-      <h2>A fork of MinecraftForge with added Bukkit & Spigot patches</h2>
+  <main>
+    <section id="main">
+      <div class="content">
+        <div id="info">
+          <h1>Ketting</h1>
+          <h2>A fork of MinecraftForge with added Bukkit & Spigot patches</h2>
 
-      <div class="button-group">
-        <router-link :to="{ name: 'Download' }" class="button primary">Downloads</router-link>
-        <router-link :to="{ name: 'FAQ' }" class="button">FAQ</router-link>
+          <div class="button-group">
+            <router-link :to="{ name: 'Download' }" class="button primary">Downloads</router-link>
+            <router-link :to="{ name: 'FAQ' }" class="button">FAQ</router-link>
+          </div>
+        </div>
+
+        <div id="terminal-container">
+          <img src="@/assets/ketting-startup.png" alt="Terminal" id="terminal">
+        </div>
       </div>
-    </div>
-
-    <div id="terminal-container">
-      <img src="@/assets/ketting-startup.png" alt="Terminal" id="terminal">
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 </template>
 
 <style scoped>
@@ -37,15 +33,16 @@ section {
 section:nth-child(even) {
   background-color: var(--color-background);
 }
-section > div {
+.content {
+  display: flex;
+  justify-content: center;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+.content > div {
   display: flex;
 }
 
-#main {
-  display: flex;
-  flex-direction: row;
-  height: 60vh;
-}
 #info {
   flex-direction: column;
   justify-content: center;
@@ -58,7 +55,6 @@ section > div {
 #info h2 {
   font-size: 1.5em;
   margin-bottom: 20px;
-
   color: var(--color-text);
 }
 .button-group {
@@ -70,17 +66,14 @@ section > div {
   border-radius: 5px;
   font-weight: bold;
   text-align: center;
-
   background-color: var(--color-background-soft);
   color: var(--color-link);
-
   transition: background-color 0.2s;
 }
 .button:hover {
   background-color: var(--color-background);
   color: var(--color-link-hover);
 }
-
 .button.primary {
   background-color: var(--color-primary);
 }
