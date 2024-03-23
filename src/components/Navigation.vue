@@ -1,5 +1,5 @@
 <template>
-  <div class="top-nav-menu nav-menu">
+  <div class="nav-menu">
     <div class="mobile-button-group">
       <font-awesome-icon :icon="this.showMobileMenu ? 'bars-staggered' : 'bars'" id="mobile-button" @click="showMenu" />
       <Logo id="logo-mobile" />
@@ -53,6 +53,9 @@ export default {
   display: flex;
   padding: 0 15px;
   align-items: center;
+
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
 .nav-items {
@@ -66,19 +69,6 @@ export default {
   margin: 0 20px;
   text-decoration: none;
   transition: color 0.2s;
-}
-
-.top-nav-menu {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-}
-
-.top-nav-menu .nav-content {
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .navbar-icon {
@@ -95,11 +85,6 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .nav-menu {
-    position: absolute;
-    width: 100%;
-  }
-
   .open-menu {
     opacity: 1;
     pointer-events: auto;
