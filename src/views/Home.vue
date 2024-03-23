@@ -32,7 +32,7 @@ main {
 
 section {
   background-color: var(--color-background-mute);
-  padding: 20px;
+  padding: 40px;
 }
 section:nth-child(even) {
   background-color: var(--color-background);
@@ -49,31 +49,63 @@ section > div {
 #info {
   flex-direction: column;
   justify-content: center;
-  background-color: red;
   width: 75%;
 }
-#terminal-container {
-  display: block;
-  position: relative;
-  width: 100%;
-  margin: 20px;
-  border-radius: 10px;
-  overflow: hidden;
+#info h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
 }
-#terminal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+#info h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+
+  color: var(--color-text);
+}
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+.button {
+  padding: 7px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+
+  background-color: var(--color-background-soft);
+  color: var(--color-link);
+
+  transition: background-color 0.2s;
+}
+.button:hover {
+  background-color: var(--color-background);
+  color: var(--color-link-hover);
 }
 
-@media (max-width: 768px) {
-  #info {
-    width: 100%;
-  }
+.button.primary {
+  background-color: var(--color-primary);
+}
+.button.primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+#terminal-container {
+  justify-content: flex-end;
+  align-items: center;
+}
+#terminal {
+  width: auto;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px black;
+  margin: 20px;
+}
+
+@media (max-width: 1000px) {
   #terminal-container {
     display: none;
+  }
+  #info {
+    width: 100%;
   }
 }
 </style>
