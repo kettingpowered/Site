@@ -15,7 +15,14 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 library.add(fas, far, fab)
 /* ICONS HERE */
 
-createApp(App)
-    .use(router)
+const app = createApp(App);
+
+//Create some global properties
+app.config.globalProperties.global = {
+    discordUrl: "https://discord.kettingpowered.org/",
+    githubUrl: "https://github.com/kettingpowered/"
+};
+
+app.use(router)
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')

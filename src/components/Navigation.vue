@@ -13,10 +13,10 @@
       </menu>
       <div style="flex-grow: 1"></div>
       <div class="navbar-icons">
-        <a class="navbar-icon" href="https://discord.kettingpowered.org">
+        <a class="navbar-icon" :href="global.discordUrl" target="_blank">
           <font-awesome-icon :icon="['fab', 'discord']" />
         </a>
-        <a class="navbar-icon" href="https://github.com/kettingpowered/Ketting-1-20-x">
+        <a class="navbar-icon" :href="global.githubUrl" target="_blank">
           <font-awesome-icon :icon="['fab', 'github']" />
         </a>
       </div>
