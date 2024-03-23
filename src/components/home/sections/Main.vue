@@ -7,7 +7,7 @@ export default {
 <template>
   <section id="main">
     <div class="content">
-      <div id="main-info">
+      <div id="info">
         <h1>Ketting</h1>
         <h3>A fork of MinecraftForge with added Bukkit & Spigot patches</h3>
 
@@ -25,7 +25,7 @@ export default {
 </template>
 
 <style scoped>
-#main-info {
+#info {
   justify-content: center;
   width: 75%;
 }
@@ -69,7 +69,7 @@ export default {
   #terminal-container {
     display: none;
   }
-  #main-info {
+  #info {
     width: 100%;
   }
 }
