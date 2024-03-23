@@ -25,6 +25,11 @@ export default {
 </template>
 
 <style scoped>
+#main {
+  min-height: 60vh;
+  align-content: center;
+}
+
 #info {
   justify-content: center;
   width: 75%;
@@ -54,7 +59,7 @@ export default {
 }
 
 #terminal-container {
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 #terminal {

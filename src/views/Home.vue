@@ -57,6 +57,7 @@ section h3 {
   justify-content: center;
   max-width: 80rem;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .content > div {
   display: flex;
