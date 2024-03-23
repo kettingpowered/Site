@@ -4,21 +4,21 @@
   /* LIGHT THEME */
   --light-color-background: #f5f5f5;
   --light-color-background-soft: #f9f9f9;
-  --light-color-background-mute: #f1f1f1;
+  --light-color-background-mute: #e0e0e0;
 
   --light-color-heading: #333;
   --light-color-text: #666;
 
-  --light-color-primary: #770708; /* Dark Red */
-  --light-color-primary-dark: #4b0406; /* Darker Red */
-  --light-color-primary-light: #a30000; /* Lighter Red */
+  --light-color-primary: #770708;
+  --light-color-primary-dark: #4b0406;
+  --light-color-primary-light: #a30000;
 
-  --light-color-secondary: #a9a9a9; /* Light Gray */
-  --light-color-secondary-dark: #808080; /* Dark Gray */
-  --light-color-secondary-light: #d3d3d3; /* Light Gray */
+  --light-color-secondary: #a9a9a9;
+  --light-color-secondary-dark: #808080;
+  --light-color-secondary-light: #d3d3d3;
 
-  --light-color-link: #CCCCCC; /* Light Gray */
-  --light-color-link-hover: #AAAAAA; /* Lighter Gray */
+  --light-color-link: #CCCCCC;
+  --light-color-link-hover: #AAAAAA;
 
   --light-color-border: #444;
 
@@ -30,16 +30,16 @@
   --dark-color-heading: #f5f5f5;
   --dark-color-text: #ccc;
 
-  --dark-color-primary: #770708; /* Dark Red */
-  --dark-color-primary-dark: #4b0406; /* Darker Red */
-  --dark-color-primary-light: #a30000; /* Lighter Red */
+  --dark-color-primary: #770708;
+  --dark-color-primary-dark: #4b0406;
+  --dark-color-primary-light: #a30000;
 
-  --dark-color-secondary: #a9a9a9; /* Light Gray */
-  --dark-color-secondary-dark: #808080; /* Dark Gray */
-  --dark-color-secondary-light: #d3d3d3; /* Light Gray */
+  --dark-color-secondary: #a9a9a9;
+  --dark-color-secondary-dark: #808080;
+  --dark-color-secondary-light: #d3d3d3;
 
-  --dark-color-link: #CCCCCC; /* Light Gray */
-  --dark-color-link-hover: #AAAAAA; /* Lighter Gray */
+  --dark-color-link: #CCCCCC;
+  --dark-color-link-hover: #AAAAAA;
 
   --dark-color-border: #e9ecef;
 }
