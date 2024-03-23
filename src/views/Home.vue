@@ -2,9 +2,9 @@
   <main>
     <section id="main">
       <div class="content">
-        <div id="info">
+        <div id="main-info">
           <h1>Ketting</h1>
-          <h2>A fork of MinecraftForge with added Bukkit & Spigot patches</h2>
+          <h3>A fork of MinecraftForge with added Bukkit & Spigot patches</h3>
 
           <div class="button-group">
             <router-link :to="{ name: 'Download' }" class="button primary">Downloads</router-link>
@@ -17,6 +17,23 @@
         </div>
       </div>
     </section>
+
+    <section id="about">
+      <div class="content">
+        <div id="about-info">
+          <h2>About Ketting</h2>
+          <p>
+            Ketting is a fork of MinecraftForge with added Bukkit & Spigot patches. It is designed to be a drop-in replacement for Forge, allowing you to run Bukkit & Spigot plugins on your Forge server.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--
+    sections to add:
+    - About
+    - Stats
+    - ...
+    -->
   </main>
 </template>
 
@@ -24,6 +41,21 @@
 main {
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+h2, h3 {
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+h2 {
+  font-size: 2.2em;
+}
+h3 {
+  font-size: 1.5em;
 }
 
 section {
@@ -41,21 +73,12 @@ section:nth-child(even) {
 }
 .content > div {
   display: flex;
+  flex-direction: column;
 }
 
-#info {
-  flex-direction: column;
+#main-info {
   justify-content: center;
   width: 75%;
-}
-#info h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-#info h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: var(--color-text);
 }
 .button-group {
   display: flex;
@@ -97,7 +120,7 @@ section:nth-child(even) {
   #terminal-container {
     display: none;
   }
-  #info {
+  #main-info {
     width: 100%;
   }
 }
