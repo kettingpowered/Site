@@ -1,41 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  /* LIGHT THEME */
+  --light-color-background: #f5f5f5;
+  --light-color-background-soft: #f9f9f9;
+  --light-color-background-mute: #f1f1f1;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  --light-color-heading: #333;
+  --light-color-text: #666;
 
-  --vt-c-indigo: #2c3e50;
+  --light-color-primary: #770708; /* Dark Red */
+  --light-color-primary-dark: #4b0406; /* Darker Red */
+  --light-color-primary-light: #a30000; /* Lighter Red */
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --light-color-secondary: #a9a9a9; /* Light Gray */
+  --light-color-secondary-dark: #808080; /* Dark Gray */
+  --light-color-secondary-light: #d3d3d3; /* Light Gray */
+
+  --light-color-link: #CCCCCC; /* Light Gray */
+  --light-color-link-hover: #AAAAAA; /* Lighter Gray */
+
+  --light-color-border: #444;
+
+  /* DARK THEME */
+  --dark-color-background: #333;
+  --dark-color-background-soft: #444;
+  --dark-color-background-mute: #222;
+
+  --dark-color-heading: #f5f5f5;
+  --dark-color-text: #ccc;
+
+  --dark-color-primary: #770708; /* Dark Red */
+  --dark-color-primary-dark: #4b0406; /* Darker Red */
+  --dark-color-primary-light: #a30000; /* Lighter Red */
+
+  --dark-color-secondary: #a9a9a9; /* Light Gray */
+  --dark-color-secondary-dark: #808080; /* Dark Gray */
+  --dark-color-secondary-light: #d3d3d3; /* Light Gray */
+
+  --dark-color-link: #CCCCCC; /* Light Gray */
+  --dark-color-link-hover: #AAAAAA; /* Lighter Gray */
+
+  --dark-color-border: #e9ecef;
 }
 
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+    --color-background: var(--light-color-background);
+    --color-background-soft: var(--light-color-background-soft);
+    --color-background-mute: var(--light-color-background-mute);
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+    --color-heading: var(--light-color-heading);
+    --color-text: var(--light-color-text);
+
+    --color-primary: var(--light-color-primary);
+    --color-primary-dark: var(--light-color-primary-dark);
+    --color-primary-light: var(--light-color-primary-light);
+
+    --color-secondary: var(--light-color-secondary);
+    --color-secondary-dark: var(--light-color-secondary-dark);
+    --color-secondary-light: var(--light-color-secondary-light);
+
+    --color-link: var(--light-color-link);
+    --color-link-hover: var(--light-color-link-hover);
+
+    --color-border: var(--light-color-border);
 }
 
-/*@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+    --color-background: var(--dark-color-background);
+    --color-background-soft: var(--dark-color-background-soft);
+    --color-background-mute: var(--dark-color-background-mute);
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-heading: var(--dark-color-heading);
+    --color-text: var(--dark-color-text);
+
+    --color-primary: var(--dark-color-primary);
+    --color-primary-dark: var(--dark-color-primary-dark);
+    --color-primary-light: var(--dark-color-primary-light);
+
+    --color-secondary: var(--dark-color-secondary);
+    --color-secondary-dark: var(--dark-color-secondary-dark);
+    --color-secondary-light: var(--dark-color-secondary-light);
+
+    --color-link: var(--dark-color-link);
+    --color-link-hover: var(--dark-color-link-hover);
+
+    --color-border: var(--dark-color-border);
   }
-}*/
+}
 
 *,
 *::before,
@@ -58,4 +111,22 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/*mark all borders with border color var*/
+* {
+  border-top-color: var(--color-border);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.5s;
+}
+a:hover {
+  color: var(--color-link-hover);
 }

@@ -46,8 +46,7 @@ export default {
 
 <style scoped>
 .nav-menu {
-  background-color: #AAA;
-  color: black;
+  background-color: var(--color-primary);
 }
 
 .nav-content {
@@ -66,12 +65,7 @@ export default {
 .nav-item {
   margin: 0 20px;
   text-decoration: none;
-  color: black;
-
   transition: color 0.2s;
-}
-.nav-item:hover {
-  color: white;
 }
 
 .top-nav-menu {
@@ -96,6 +90,10 @@ export default {
   display: none;
 }
 
+#mobile-button {
+  color: var(--color-link);
+}
+
 @media screen and (max-width: 768px) {
   .nav-menu {
     position: absolute;
@@ -104,12 +102,15 @@ export default {
 
   .open-menu {
     opacity: 1;
+    pointer-events: auto;
   }
 
   .closed-menu {
     opacity: 0;
     height: 0;
     padding: 0;
+
+    pointer-events: none;
   }
 
   .nav-content {
@@ -150,7 +151,7 @@ export default {
   }
 
   .navbar-icons {
-    border-top: 2px solid #000;
+    border-top: 2px solid var(--color-link);
   }
 }
 </style>

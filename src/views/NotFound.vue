@@ -43,11 +43,12 @@ export default {
   justify-content: center;
   height: 100vh;
   text-align: center;
+
+  user-select: none;
 }
 
 h1 {
   font-size: 12rem;
-  color: #666;
 }
 
 h2 {
@@ -60,8 +61,6 @@ h2 {
 
 p {
   font-size: 2.2rem;
-  color: #666;
-
   padding: 0 20px;
 }
 
