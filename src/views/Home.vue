@@ -12,7 +12,7 @@ export default {
 
 <template>
   <main>
-    <MainSection />
+    <MainSection id="heading" />
     <AboutSection />
     <!--
     sections to add:
@@ -55,12 +55,28 @@ section h3 {
 .content {
   display: flex;
   justify-content: center;
-  max-width: 80rem;
+  max-width: 70rem;
   margin: 0 auto;
   padding: 0 15px;
 }
+#heading .content {
+  max-width: 80rem;
+}
+
 .content > div {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  section h1 {
+    font-size: 2.5em;
+  }
+  section h2 {
+    font-size: 1.8em;
+  }
+  section h3 {
+    font-size: 1.2em;
+  }
 }
 </style>

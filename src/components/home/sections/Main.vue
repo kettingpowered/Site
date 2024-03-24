@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <section id="main">
+  <section class="main">
     <div class="content">
       <div id="info">
         <h1>Ketting</h1>
@@ -25,7 +25,7 @@ export default {
 </template>
 
 <style scoped>
-#main {
+.main {
   min-height: 60vh;
   align-content: center;
 }
