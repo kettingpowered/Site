@@ -51,7 +51,7 @@ export default {
 
 .nav-content {
   display: flex;
-  padding: 0 15px;
+  padding: 5px 15px;
   align-items: center;
 
   max-width: 80rem;
@@ -63,6 +63,7 @@ export default {
   justify-content: center;
   align-items: center;
   list-style: none;
+  font-size: 1.2em;
 }
 
 .nav-item {
@@ -72,7 +73,7 @@ export default {
 }
 
 .navbar-icon {
-  padding: 0.5rem 0.5rem 0 0.5rem;
+  padding: .9rem;
   font-size: x-large;
 }
 
@@ -114,7 +115,7 @@ export default {
   }
 
   .nav-item {
-    margin: 5px 0;
+    margin: 15px 0;
   }
 
   .mobile-button-group {
