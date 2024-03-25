@@ -26,6 +26,7 @@ export default {
 
 <style scoped>
 .main {
+  display: flex;
   min-height: 60vh;
   align-content: center;
 }
