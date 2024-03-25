@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  title: String,
+  title: [String, Number],
   description: String,
   icon: Array[String],
   loading: Boolean
