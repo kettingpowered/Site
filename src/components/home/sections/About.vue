@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <section id="about">
+  <section class="about">
     <div class="content">
       <div id="info">
         <div id="calculation">
@@ -57,10 +57,10 @@ export default {
   height: 150px;
   object-fit: contain;
 
-  background-color: var(--color-background-soft);
+  background-color: var(--color-background-mute);
 
   border-radius: 10px;
-  box-shadow: 0 0 10px var(--color-background-mute);
+  box-shadow: 0 0 10px var(--color-border);
   margin: 0 20px;
   padding: 10px;
 }
@@ -75,7 +75,7 @@ export default {
 }
 
 #text {
-  margin-top: 35px;
+  margin: 40px 0;
 }
 
 p:not(:last-child) {
