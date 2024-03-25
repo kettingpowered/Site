@@ -1,18 +1,22 @@
 <script setup>
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-
 defineProps({
   title: String,
   description: String,
-  icon: Array[String]
-})
+  icon: Array[String],
+  loading: Boolean
+});
 </script>
 
 <template>
   <div class="stat">
-    <font-awesome-icon :icon="icon" size="3x"/>
-    <p id="title">{{ title }}</p>
-    <p id="desc">{{ description }}</p>
+    <div v-if="loading" class="loading-spinner">
+      <font-awesome-icon icon="spinner" pulse size="3x" />
+    </div>
+    <div v-else>
+      <font-awesome-icon :icon="icon" size="3x"/>
+      <p id="title">{{ title }}</p>
+      <p id="desc">{{ description }}</p>
+    </div>
   </div>
 </template>
 
@@ -37,5 +41,17 @@ defineProps({
 #title {
   font-size: 2.5em;
   font-weight: bold;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loading-spinner > * {
+  margin: auto;
 }
 </style>
