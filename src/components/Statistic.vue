@@ -31,14 +31,11 @@ defineProps({
   margin: 10px;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 #title {
   font-size: 2.5em;
   font-weight: bold;
-}
-
-#desc {
-  text-align: center;
 }
 </style>
