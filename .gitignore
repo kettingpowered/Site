@@ -28,3 +28,5 @@ coverage
 
 *.tsbuildinfo
 nginx.conf
+compose.yml
+update.sh	
