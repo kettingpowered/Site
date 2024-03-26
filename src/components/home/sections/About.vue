@@ -20,10 +20,16 @@ export default {
         <div id="text">
           <h2>What is Ketting?</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque cupiditate delectus dolor, earum eligendi est exercitationem explicabo impedit molestiae nemo, nesciunt nulla officiis, omnis repellat totam! Consequatur culpa dignissimos ea error esse est excepturi, expedita, facere maxime minima nihil placeat. Eaque harum illum laudantium nihil obcaecati quas voluptas?
+            Ketting is a Minecraft server software that combines the best of both Forge and Spigot. It allows you to run
+            mods and plugins on the same server, (hopefully) without any issues.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque beatae corporis delectus dignissimos dolorem dolores error facere in nesciunt non placeat rem similique, soluta!
+            Ketting was made by <strong>JustRed23</strong>, one of the former developers of <a id="magma" href="https://magmafoundation.org/" target="_blank">Magma</a>.
+            After the project was abandoned, he decided to continue it on his own, <router-link id="team" :to="{ name: 'Team' }">but was soon joined by other developers who helped him out</router-link>.
+            Due to many issues with the original codebase, they decided to start from scratch and rewrite the entire project, making it more stable and easier to work with.
+          </p>
+          <p>
+            Ketting is currently still in active development, but you can already download and test it out for yourself. <strong>Just keep in mind that it's still in beta, so there might be some bugs.</strong>
           </p>
         </div>
       </div>
@@ -32,6 +38,26 @@ export default {
 </template>
 
 <style scoped>
+#magma {
+  color: orangered;
+}
+#magma:hover {
+  text-decoration: underline;
+  color: darkorange;
+}
+
+#team {
+  color: var(--color-link-secondary)
+}
+#team:hover {
+  text-decoration: underline;
+  color: var(--color-link-secondary-hover)
+}
+
+strong {
+  font-weight: bold;
+}
+
 #info {
   display: flex;
   flex-direction: column;
