@@ -19,6 +19,8 @@
 
   --light-color-link: #CCCCCC;
   --light-color-link-hover: #AAAAAA;
+  --light-color-link-secondary: #000000;
+  --light-color-link-secondary-hover: #333333;
 
   --light-color-border: #444;
 
@@ -40,30 +42,34 @@
 
   --dark-color-link: #CCCCCC;
   --dark-color-link-hover: #AAAAAA;
+  --dark-color-link-secondary: #FFFFFF;
+  --dark-color-link-secondary-hover: #DDDDDD;
 
   --dark-color-border: #e9ecef;
 }
 
 :root {
-    --color-background: var(--light-color-background);
-    --color-background-soft: var(--light-color-background-soft);
-    --color-background-mute: var(--light-color-background-mute);
+  --color-background: var(--light-color-background);
+  --color-background-soft: var(--light-color-background-soft);
+  --color-background-mute: var(--light-color-background-mute);
 
-    --color-heading: var(--light-color-heading);
-    --color-text: var(--light-color-text);
+  --color-heading: var(--light-color-heading);
+  --color-text: var(--light-color-text);
 
-    --color-primary: var(--light-color-primary);
-    --color-primary-dark: var(--light-color-primary-dark);
-    --color-primary-light: var(--light-color-primary-light);
+  --color-primary: var(--light-color-primary);
+  --color-primary-dark: var(--light-color-primary-dark);
+  --color-primary-light: var(--light-color-primary-light);
 
-    --color-secondary: var(--light-color-secondary);
-    --color-secondary-dark: var(--light-color-secondary-dark);
-    --color-secondary-light: var(--light-color-secondary-light);
+  --color-secondary: var(--light-color-secondary);
+  --color-secondary-dark: var(--light-color-secondary-dark);
+  --color-secondary-light: var(--light-color-secondary-light);
 
-    --color-link: var(--light-color-link);
-    --color-link-hover: var(--light-color-link-hover);
+  --color-link: var(--light-color-link);
+  --color-link-hover: var(--light-color-link-hover);
+  --color-link-secondary: var(--light-color-link-secondary);
+  --color-link-secondary-hover: var(--light-color-link-secondary-hover);
 
-    --color-border: var(--light-color-border);
+  --color-border: var(--light-color-border);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -85,6 +91,8 @@
 
     --color-link: var(--dark-color-link);
     --color-link-hover: var(--dark-color-link-hover);
+    --color-link-secondary: var(--dark-color-link-secondary);
+    --color-link-secondary-hover: var(--dark-color-link-secondary-hover);
 
     --color-border: var(--dark-color-border);
   }
