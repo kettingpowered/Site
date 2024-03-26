@@ -7,9 +7,9 @@
     <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
       <Logo id="logo" />
       <menu class="nav-items">
-        <router-link class="nav-item" to="/">Home</router-link>
-        <router-link class="nav-item" :to="{ name: 'FAQ' }">FAQ</router-link>
-        <router-link class="nav-item" :to="{ name: 'Download' }">Download</router-link>
+        <router-link class="nav-item" @click="closeMenu" to="/">Home</router-link>
+        <router-link class="nav-item" @click="closeMenu" :to="{ name: 'FAQ' }">FAQ</router-link>
+        <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Download' }">Download</router-link>
       </menu>
       <div style="flex-grow: 1"></div>
       <div class="navbar-icons">
@@ -36,6 +36,9 @@ export default {
   methods: {
     showMenu() {
       this.showMobileMenu = !this.showMobileMenu;
+    },
+    closeMenu() {
+      this.showMobileMenu = false;
     },
   },
   components: {
