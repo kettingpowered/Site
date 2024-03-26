@@ -9,6 +9,7 @@
       <menu class="nav-items">
         <router-link class="nav-item" @click="closeMenu" to="/">Home</router-link>
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'FAQ' }">FAQ</router-link>
+        <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Team' }">Team</router-link>
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Download' }">Download</router-link>
       </menu>
       <div style="flex-grow: 1"></div>
