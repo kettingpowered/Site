@@ -3,7 +3,8 @@ defineProps({
   title: [String, Number],
   description: String,
   icon: Array[String],
-  loading: Boolean
+  loading: Boolean,
+  error: Boolean
 });
 </script>
 
@@ -13,6 +14,9 @@ defineProps({
       <font-awesome-icon icon="spinner" pulse size="3x" />
     </div>
     <div v-else>
+      <div class="error-icon" v-if="error">
+        <font-awesome-icon icon="exclamation-circle" size="lg" />
+      </div>
       <font-awesome-icon :icon="icon" size="3x"/>
       <p id="title">{{ title }}</p>
       <p id="desc">{{ description }}</p>
@@ -22,6 +26,7 @@ defineProps({
 
 <style scoped>
 .stat {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,5 +58,11 @@ defineProps({
 
 .loading-spinner > * {
   margin: auto;
+}
+
+.error-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 </style>
