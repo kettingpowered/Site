@@ -242,8 +242,8 @@ export default {
   align-items: center;
 }
 
-.version-container {
-  width: 50rem;
+.version-buttons {
+  width: 50vw;
 }
 
 .version-header {

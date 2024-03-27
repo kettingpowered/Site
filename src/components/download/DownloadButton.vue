@@ -86,12 +86,12 @@ export default {
 #get {
   border-radius: 15px;
   transition: background-color 0.2s;
+  font-size: 1em;
   user-select: none;
   cursor: pointer;
 }
 
 #compare {
-  font-size: 1em;
   margin-right: 25px;
   padding: 1px 10px;
   background-color: var(--color-background-mute);
@@ -101,7 +101,6 @@ export default {
 }
 
 #get {
-  font-size: 1.2em;
   margin-right: 10px;
   padding: 2px 10px;
   background-color: var(--color-background-mute);
@@ -118,6 +117,9 @@ export default {
   padding: 7px 10px;
   margin: -10px 0 10px 0;
 }
+#details p:not(:last-child) {
+  margin-bottom: 10px;
+}
 
 #details a {
   color: var(--color-link-secondary);
@@ -129,13 +131,52 @@ export default {
 
 #terminal {
   display: inline-block;
-  white-space: nowrap;
   background-color: #111;
   color: #fff;
   font: 1em monospace;
-  line-height: 1.5em;
   border-radius: 10px;
   padding: 10px;
   margin-top: 5px;
+}
+#terminal p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  #button {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #version {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #right {
+    margin: 0 auto;
+    gap: 1em;
+  }
+
+  #compare,
+  #get {
+    margin: 0;
+    border-radius: 10px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  #right {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #compare,
+  #get {
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>
