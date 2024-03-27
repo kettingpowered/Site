@@ -20,7 +20,10 @@ const app = createApp(App);
 //Create some global properties
 app.config.globalProperties.global = {
     discordUrl: "https://discord.kettingpowered.org/",
-    githubUrl: "https://github.com/kettingpowered/"
+    githubUrl: "https://github.com/kettingpowered/",
+    softwareUrl: function() {
+        return this.githubUrl + "Ketting-1-20-x/";
+    }
 };
 
 app.use(router)
