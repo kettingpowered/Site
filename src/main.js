@@ -21,6 +21,7 @@ const app = createApp(App);
 app.config.globalProperties.global = {
     discordUrl: "https://discord.kettingpowered.org/",
     githubUrl: "https://github.com/kettingpowered/",
+    downloadUrl: "https://nexus.c0d3m4513r.com/custom/forge-ketting-versions.xml",
     softwareUrl: function() {
         return this.githubUrl + "Ketting-1-20-x/";
     }
