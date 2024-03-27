@@ -24,7 +24,8 @@ app.config.globalProperties.global = {
     downloadUrl: "https://nexus.c0d3m4513r.com/custom/forge-ketting-versions.xml",
     softwareUrl: function() {
         return this.githubUrl + "Ketting-1-20-x/";
-    }
+    },
+    unsupportedVersions: ["1.20.3"]
 };
 
 app.use(router)

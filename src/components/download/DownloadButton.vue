@@ -30,6 +30,9 @@ export default {
   computed: {
     buttonBorderRadius() {
       return this.detailsActive ? "15px 15px 0 0" : "15px";
+    },
+    isUnsupportedVersion() {
+      return this.global.unsupportedVersions.includes(this.mcVersion);
     }
   }
 }
@@ -39,12 +42,17 @@ export default {
   <div id="button-container">
     <div id="button" :style="{ borderRadius: buttonBorderRadius }">
       <p id="version">{{ kettingVersion }}</p>
+      <span id="unsupported" v-if="isUnsupportedVersion">unsupported</span>
       <div id="right">
         <a id="compare" v-if="compareVersion != null" :href="global.softwareUrl() + 'compare/' + compareVersion + '...' + version" target="_blank">What's new?</a>
         <p id="get" @click="this.$emit('toggle-details')">Get it</p>
       </div>
     </div>
     <div id="details" v-if="detailsActive">
+      <div id="unsupported-details" v-if="isUnsupportedVersion">
+        <h3>Note: This version is unsupported</h3>
+        <p>Unsupported versions may contain bugs or security vulnerabilities. Use at your own risk.</p>
+      </div>
       <h2>How to install</h2>
       <p>Step 1: Download <a :href="global.githubUrl + 'kettinglauncher/releases'" target="_blank">kettinglauncher</a>.</p>
       <p>Step 2: Make a new folder and put the downloaded file in it.</p>
@@ -64,7 +72,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: var(--color-background-soft);
+  background-color: var(--color-background-mute);
   padding: 7px 0;
   margin: 10px 0;
 }
@@ -72,6 +80,17 @@ export default {
 #version {
   font-size: 1.5em;
   margin-left: 10px;
+}
+
+#unsupported {
+  margin-left: 15px;
+  padding: 2px 5px;
+  border-radius: 15px;
+  border: 2px solid white;
+  background: darkred;
+  color: white;
+  font: small-caps bold 0.8em monospace;
+  letter-spacing: 1px;
 }
 
 #right {
@@ -84,35 +103,33 @@ export default {
 
 #compare,
 #get {
+  background-color: var(--color-background-soft);
+  color: var(--color-text);
   border-radius: 15px;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
   font-size: 1em;
   user-select: none;
   cursor: pointer;
+}
+#compare:hover,
+#get:hover {
+  background-color: var(--color-link-hover);
+  color: var(--color-background-soft);
 }
 
 #compare {
   margin-right: 25px;
   padding: 1px 10px;
-  background-color: var(--color-background-mute);
 }
-#compare:hover {
-  background-color: var(--color-background-soft);
-}
-
 #get {
   margin-right: 10px;
   padding: 2px 10px;
-  background-color: var(--color-background-mute);
-}
-#get:hover {
-  background-color: var(--color-background-soft);
 }
 
 #details {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-background-soft);
+  background-color: var(--color-background-mute);
   border-radius: 0 0 15px 15px;
   padding: 7px 10px;
   margin: -10px 0 10px 0;
@@ -127,6 +144,14 @@ export default {
 #details a:hover {
   text-decoration: underline;
   color: var(--color-link-secondary-hover);
+}
+
+#unsupported-details {
+  text-align: center;
+  background-color: darkred;
+  color: white;
+  border-radius: 15px;
+  margin: 10px 0 25px 0;
 }
 
 #terminal {
