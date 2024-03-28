@@ -2,34 +2,39 @@
 export default {
   name: "Member",
   props: {
-    githubName: {
+    name: {
       type: String,
-      required: true
+      required: true,
     },
-    discordName: {
+    image: {
       type: String,
+      required: true,
+    },
+    description: {
+      type: Array,
+      required: false,
+    },
+    alternateNames: {
+      names: [{
+        icon: Array,
+        name: String,
+      }],
       required: false
     },
     roles: {
       type: Array,
       required: true
     },
-    color: {
-      type: String,
-      required: false
-    },
     socials: {
       type: Array,
       required: false
     }
   },
-  computed: {
-    githubUrl() {
-      return `https://github.com/${this.githubName}`;
-    }
-  },
   methods: {
     determineSocialIconFromUrl(url) {
+      if (url.includes('github.com'))
+        return ['fab', 'github'];
+
       if (url.includes('twitter.com') || url.includes('x.com'))
         return ['fab', 'twitter'];
 
@@ -42,6 +47,9 @@ export default {
         return ['fab', 'youtube'];
     },
     getLabelFromUrl(url) {
+      if (url.includes('github.com'))
+        return 'Github';
+
       if (url.includes('twitter.com') || url.includes('x.com'))
         return 'Twitter';
 
@@ -66,13 +74,13 @@ export default {
 <template>
   <div class="member">
     <div class="avatar">
-      <img :src="githubUrl + '.png'" alt="avatar" />
+      <img :src="image" loading="lazy" alt="avatar" />
     </div>
     <div class="info">
-      <h2>{{ githubName }}</h2>
-      <div class="discord-name" v-if="discordName">
-        <font-awesome-icon :icon="['fab', 'discord']" />
-        <span>{{ discordName }}</span>
+      <h2>{{ name }}</h2>
+      <div v-for="aName in alternateNames" class="alternate-names" v-if="alternateNames">
+        <font-awesome-icon :icon="aName.icon" />
+        <span>{{ aName.name }}</span>
       </div>
     </div>
     <div class="role-container">
@@ -82,7 +90,6 @@ export default {
       </div>
     </div>
     <div class="socials">
-      <a :href="githubUrl" target="_blank" aria-label="Github"><font-awesome-icon :icon="['fab', 'github']" /></a>
       <a v-for="social in socials" :href="social" target="_blank" :aria-label="getLabelFromUrl(social)">
         <font-awesome-icon :icon="determineSocialIconFromUrl(social)" />
       </a>
@@ -118,7 +125,7 @@ export default {
   height: 65px;
 }
 
-.discord-name {
+.alternate-names {
   display: flex;
   align-items: center;
   gap: 0.5rem;
