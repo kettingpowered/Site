@@ -1,10 +1,11 @@
 <template>
   <div class="nav-menu">
     <div class="mobile-button-group">
-      <font-awesome-icon :icon="this.showMobileMenu ? 'bars-staggered' : 'bars'" id="mobile-button" @click="showMenu" />
+      <font-awesome-icon :icon="'bars'" id="mobile-button" @click="showMenu" />
+      <font-awesome-icon :icon="'bars-staggered'" id="mobile-button" class="hidden" @click="closeMenu" />
       <Logo id="logo-mobile" />
     </div>
-    <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
+    <div class="nav-content closed-menu">
       <Logo id="logo" />
       <menu class="nav-items">
         <router-link class="nav-item" @click="closeMenu" to="/">Home</router-link>
@@ -26,7 +27,12 @@
 </template>
 
 <script>
-import Logo from "./Logo.vue";
+import $ from 'jquery';
+import Logo from './Logo.vue';
+
+const menuOpen = ".nav-menu .mobile-button-group #mobile-button:nth-child(1)";
+const menuClosed = ".nav-menu .mobile-button-group #mobile-button:nth-child(2)";
+const menuContent = ".nav-menu .nav-content";
 
 export default {
   data() {
@@ -36,10 +42,20 @@ export default {
   },
   methods: {
     showMenu() {
-      this.showMobileMenu = !this.showMobileMenu;
+      this.showMobileMenu = true;
+      $(menuOpen).addClass("hidden");
+      $(menuClosed).removeClass("hidden");
+      const menuContentObj = $(menuContent);
+      menuContentObj.removeClass("closed-menu");
+      menuContentObj.addClass("open-menu");
     },
     closeMenu() {
       this.showMobileMenu = false;
+      $(menuOpen).removeClass("hidden");
+      $(menuClosed).addClass("hidden");
+      const menuContentObj = $(menuContent);
+      menuContentObj.addClass("closed-menu");
+      menuContentObj.removeClass("open-menu");
     },
   },
   components: {
@@ -49,6 +65,9 @@ export default {
 </script>
 
 <style scoped>
+.hidden {
+  display: none;
+}
 .nav-menu {
   background-color: var(--color-primary);
 }
