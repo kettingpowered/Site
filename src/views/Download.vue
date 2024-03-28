@@ -197,4 +197,24 @@ export default {
 .version-buttons {
   width: 50vw;
 }
+
+@media (max-width: 1000px) {
+  .switch {
+    width: 40vw;
+  }
+
+  .version-buttons {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .switch {
+    width: 60vw;
+  }
+
+  .version-buttons {
+    width: 90vw;
+  }
+}
 </style>
