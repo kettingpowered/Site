@@ -35,7 +35,7 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 70vw;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .members {
