@@ -171,13 +171,14 @@ export default {
 }
 
 .option {
-  color: var(--color-link);
+  color: var(--color-text);
   flex: 1;
   text-align: center;
   cursor: pointer;
   padding: 3px;
   transition: color 0.3s;
   z-index: 1;
+  user-select: none;
 }
 
 .option.selected {
