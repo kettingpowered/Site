@@ -12,10 +12,10 @@ export default {
           <div id="sum">
             <img src="@/assets/forge.svg" alt="MinecraftForge">
             <span id="plus-icon">+</span>
-            <img src="@/assets/spigot.png" alt="Spigot">
+            <img src="@/assets/spigot.webp" alt="Spigot">
           </div>
           <span id="equals-icon">=</span>
-          <img src="@/assets/ketting.png" alt="Ketting">
+          <img src="@/assets/ketting.webp" alt="Ketting">
         </div>
         <div id="text">
           <h2>What is Ketting?</h2>
