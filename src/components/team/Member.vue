@@ -6,6 +6,10 @@ export default {
       type: String,
       required: true
     },
+    discordName: {
+      type: String,
+      required: false
+    },
     roles: {
       type: Array,
       required: true
@@ -54,11 +58,15 @@ export default {
     </div>
     <div class="info">
       <h2>{{ githubName }}</h2>
-      <div class="role-container">
-        <div class="role" v-for="role in roles" :key="role" :style="'border-color: ' + getRoleColor(role)">
-          <span class="role-color" :style="'background-color: ' + getRoleColor(role)"></span>
-          <span class="role-name">{{ role }}</span>
-        </div>
+      <div class="discord-name" v-if="discordName">
+        <font-awesome-icon :icon="['fab', 'discord']" />
+        <span>{{ discordName }}</span>
+      </div>
+    </div>
+    <div class="role-container">
+      <div class="role" v-for="role in roles" :key="role" :style="'border-color: ' + getRoleColor(role)">
+        <span class="role-color" :style="'background-color: ' + getRoleColor(role)"></span>
+        <span class="role-name">{{ role }}</span>
       </div>
     </div>
     <div class="socials">
@@ -87,6 +95,7 @@ export default {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  user-select: none;
 }
 
 .info {
@@ -94,14 +103,23 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  height: 65px;
+}
+
+.discord-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: -10px;
 }
 
 .role-container {
+  margin-top: auto;
+  margin-bottom: 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin: 10px 0;
 }
 
 .role {
@@ -118,7 +136,6 @@ export default {
   width: .8rem;
   height: .8rem;
   border-radius: 50%;
-  background: white;
 }
 
 .role-name {
@@ -132,7 +149,14 @@ export default {
   gap: 1.5rem;
   border-top: 1px solid var(--color-border);
   padding-top: .8rem;
-  padding-left: .6rem;
-  padding-right: .6rem;
+  width: 80%;
+  justify-content: center;
+}
+
+.socials a {
+  color: var(--color-link-secondary);
+}
+.socials a:hover {
+  color: var(--color-link-secondary-hover);
 }
 </style>
