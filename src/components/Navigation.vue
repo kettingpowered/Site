@@ -74,6 +74,7 @@ export default {
   margin: 0 20px;
   text-decoration: none;
   transition: color 0.2s;
+  user-select: none;
 }
 
 .navbar-icon {

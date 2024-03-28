@@ -47,6 +47,7 @@ export default {
   background-color: var(--color-background-soft);
   color: var(--color-link);
   transition: background-color 0.2s;
+  user-select: none;
 }
 .button:hover {
   background-color: var(--color-background);
