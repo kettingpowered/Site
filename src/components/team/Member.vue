@@ -41,6 +41,18 @@ export default {
       if (url.includes('youtube.com'))
         return ['fab', 'youtube'];
     },
+    getLabelFromUrl(url) {
+      if (url.includes('twitter.com') || url.includes('x.com'))
+        return 'Twitter';
+
+      //twitch
+      if (url.includes('twitch.tv'))
+        return 'Twitch';
+
+      //youtube
+      if (url.includes('youtube.com'))
+        return 'Youtube';
+    },
     getRoleColor(role) {
       if (this.discordRoles.hasOwnProperty(role))
         return this.discordRoles[role];
@@ -70,8 +82,8 @@ export default {
       </div>
     </div>
     <div class="socials">
-      <a :href="githubUrl" target="_blank"><font-awesome-icon :icon="['fab', 'github']" /></a>
-      <a v-for="social in socials" :href="social" target="_blank">
+      <a :href="githubUrl" target="_blank" aria-label="Github"><font-awesome-icon :icon="['fab', 'github']" /></a>
+      <a v-for="social in socials" :href="social" target="_blank" :aria-label="getLabelFromUrl(social)">
         <font-awesome-icon :icon="determineSocialIconFromUrl(social)" />
       </a>
     </div>

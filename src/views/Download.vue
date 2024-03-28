@@ -112,7 +112,7 @@ export default {
     <div id="display" v-else>
       <div class="version-container" v-for="[mcVersion, versions] in filteredReleases">
         <div class="switch">
-          <div class="option" v-for="version in orderedReleases.keys()" :key="version" :class="{ 'selected': selectedRelease === version }" @click="setSelectedRelease(version)">{{ version }}</div>
+          <div class="option" v-for="version in orderedReleases.keys()" :key="version" :class="{ 'selected': selectedRelease === version }" @click="setSelectedRelease(version)" :aria-label="'Minecraft-Version '+version" tabindex=0>{{ version }}</div>
           <div class="background" :style="{ left: buttonBgPos, width: buttonBgWidth }"></div>
         </div>
         <div class="version-buttons">
