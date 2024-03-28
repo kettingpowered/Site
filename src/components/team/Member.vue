@@ -108,9 +108,10 @@ export default {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   border: 2px solid;
   padding: 0.25rem .5rem;
+  user-select: none;
 }
 
 .role-color {
