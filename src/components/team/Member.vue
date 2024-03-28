@@ -60,12 +60,12 @@ export default {
           <span class="role-name">{{ role }}</span>
         </div>
       </div>
-      <div class="socials">
-        <a :href="githubUrl" target="_blank"><font-awesome-icon :icon="['fab', 'github']" /></a>
-        <a v-for="social in socials" :href="social" target="_blank">
-          <font-awesome-icon :icon="determineSocialIconFromUrl(social)" />
-        </a>
-      </div>
+    </div>
+    <div class="socials">
+      <a :href="githubUrl" target="_blank"><font-awesome-icon :icon="['fab', 'github']" /></a>
+      <a v-for="social in socials" :href="social" target="_blank">
+        <font-awesome-icon :icon="determineSocialIconFromUrl(social)" />
+      </a>
     </div>
   </div>
 </template>
@@ -125,8 +125,13 @@ export default {
 }
 
 .socials {
-  display: flex;
-  gap: 1rem;
+  margin-top: auto;
   font-size: 1.2rem;
+  display: flex;
+  gap: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: .8rem;
+  padding-left: .6rem;
+  padding-right: .6rem;
 }
 </style>
