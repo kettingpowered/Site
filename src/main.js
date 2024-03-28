@@ -28,6 +28,15 @@ app.config.globalProperties.global = {
     unsupportedVersions: ["1.20.3"]
 };
 
+//Discord Roles and their colors
+app.config.globalProperties.discordRoles = {
+    "Owner": "#660000",
+    "Admin": "#ffcc00",
+    "Staff": "#ff6633",
+    "Helper": "#ff3333",
+    "Contributor": "#33cc99",
+}
+
 app.use(router)
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')
