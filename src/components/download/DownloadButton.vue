@@ -178,6 +178,11 @@ export default {
     text-align: center;
   }
 
+  #unsupported {
+    margin: 5px auto;
+    max-width: 100px;
+  }
+
   #right {
     margin: 0 auto;
     gap: 1em;
