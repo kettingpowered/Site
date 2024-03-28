@@ -59,7 +59,7 @@ export default {
       <p>Step 3: Open a terminal of choice and execute the following command:</p>
       <div>
         <div id="terminal">
-          <p>cd path/to/folder</p>
+          <p>cd <i>path/to/folder</i></p>
           <p>java -jar kettinglauncher-X.X.X.jar -minecraftVersion {{ mcVersion + (latest ? '' : ' -kettingVersion ' + kettingVersion) }}</p>
         </div>
       </div>
