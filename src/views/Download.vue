@@ -86,8 +86,8 @@ export default {
       this.selectedRelease = version;
     }
   },
-  created() {
-    this.fetchReleases();
+  async created() {
+    await this.fetchReleases();
   },
   computed: {
     filteredReleases() {
