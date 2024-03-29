@@ -1,4 +1,5 @@
 <script>
+import chris from '@/assets/team-chris.webp';
 import Member from "@/components/team/Member.vue";
 
 export default {
@@ -83,7 +84,7 @@ export default {
       />
       <Member
           name="Chris"
-          image="https://cdn.discordapp.com/avatars/228145889988837385/4e4988596133076ee70c643b8995dfed.webp?size=256"
+          :image="chris"
           :alternate-names="[{icon: ['fab', 'github'], name: 'Kit4444'}]"
           :roles="['Helper']"
           :socials="['https://github.com/Kit4444', 'https://www.twitch.tv/chriswille2856', 'https://www.youtube.com/channel/UCkTayY7PX4oV2DBABEaDQKQ']"
