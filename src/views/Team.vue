@@ -24,13 +24,14 @@ export default {
           name="C0D3 M4513R"
           image="https://github.com/C0D3-M4513R.png"
           :roles="['Admin', 'Contributor']"
-          :description="['Creator of KettingLauncher', 'Hoster of Released Ketting Versions & Ketting\'s Website', 'Maintainer']"
+          :description="['Creator of KettingLauncher', 'Hosts Ketting Releases', 'Manages Ketting\'s Website', 'Maintainer']"
           :socials="['https://github.com/C0D3-M4513R','https://twitter.com/C0D3M4513R', 'https://www.twitch.tv/c0d3_m4513r', 'https://www.youtube.com/channel/UC30moJmnYyVmD2RkhRjOxpw']"
       />
       <Member
           name="TonimatasDEV"
           image="https://github.com/TonimatasDEV.png"
           :roles="['Contributor']"
+          :description="['Frequently Fixes Mixin Issues']"
           :socials="['https://github.com/TonimatasDEV','https://www.twitch.tv/tonimatasdev', 'https://www.youtube.com/channel/UCUB8iy2bYCvlF2JZBi3vTIw']"
       />
       <Member
@@ -53,6 +54,7 @@ export default {
           image="https://cdn.discordapp.com/avatars/178606113321779209/c0d65a7afb017b2e56a6cf43e9a0ae82.webp?size=256"
           :alternate-names="[{icon: ['fab', 'github'], name: 'LarcekGiglamesh'}]"
           :roles="['Admin', 'Staff']"
+          :description="['Provides Server for Ketting\'s Website']"
           :socials="['https://github.com/LarcekGiglamesh', 'https://www.twitch.tv/larcek']"
       />
       <Member
