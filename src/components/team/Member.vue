@@ -76,22 +76,24 @@ export default {
     <div class="avatar">
       <img :src="image" loading="lazy" alt="avatar" />
     </div>
-    <div class="info">
-      <h2>{{ name }}</h2>
-      <div v-for="aName in alternateNames" class="alternate-names" v-if="alternateNames">
-        <font-awesome-icon :icon="aName.icon" />
-        <span>{{ aName.name }}</span>
+    <div>
+      <div class="info">
+        <h2>{{ name }}</h2>
+        <div v-for="aName in alternateNames" class="alternate-names" v-if="alternateNames">
+          <font-awesome-icon :icon="aName.icon" />
+          <span>{{ aName.name }}</span>
+        </div>
+      </div>
+      <div class="role-container">
+        <div class="role" v-for="role in roles" :key="role" :style="'border-color: ' + getRoleColor(role)">
+          <span class="role-color" :style="'background-color: ' + getRoleColor(role)"></span>
+          <span class="role-name">{{ role }}</span>
+        </div>
       </div>
     </div>
-    <div class="role-container">
-      <div class="role" v-for="role in roles" :key="role" :style="'border-color: ' + getRoleColor(role)">
-        <span class="role-color" :style="'background-color: ' + getRoleColor(role)"></span>
-        <span class="role-name">{{ role }}</span>
-      </div>
-    </div>
-    <details class="description" v-if="description">
+    <details class="description-container" v-if="description">
       <summary>Details</summary>
-      <ul v-for="sDescription in description">
+      <ul class="description" v-for="sDescription in description">
         <li>{{sDescription}}</li>
       </ul>
     </details>
@@ -139,8 +141,7 @@ export default {
 }
 
 .role-container {
-  margin-top: auto;
-  margin-bottom: 10px;
+  margin: 0.5rem 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -167,16 +168,25 @@ export default {
   font-size: .8rem;
 }
 
-.description summary {
+.description-container summary {
   cursor: pointer;
   text-align: center;
 }
 
-/* todo: this still doesn't look that good */
-.description {
-  margin-top: auto;
-  font-size: 0.8rem;
+.description-container {
   width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.description {
+  text-align: left;
+  font-size: .9rem;
+  line-height: 1.5;
+  margin: .5rem auto;
+  padding: 0 2.5rem;
+  width: 100%;
+  justify-content: center;
 }
 
 .socials {
