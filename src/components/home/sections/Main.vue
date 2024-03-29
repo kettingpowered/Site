@@ -18,7 +18,7 @@ export default {
       </div>
 
       <div id="terminal-container">
-        <img src="@/assets/ketting-startup.png" alt="Terminal" id="terminal">
+        <img src="@/assets/ketting-startup.png" alt="Terminal" id="terminal" >
       </div>
     </div>
   </section>

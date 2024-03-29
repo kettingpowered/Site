@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "sourceMap": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-ssg build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,11 +15,15 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.6",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "fast-xml-parser": "^4.3.6",
+    "jquery": "^3.7.1",
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.1.5"
+    "vite": "^5.1.5",
+    "vite-plugin-pages": "^0.32.1",
+    "vite-ssg": "^0.23.6",
+    "vue-router": "^4.3.0"
   }
 }

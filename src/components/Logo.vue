@@ -6,8 +6,8 @@ export default {
 
 <template>
   <div class="logo">
-    <img class="logo-img" src="@/assets/ketting.png" alt="Ketting logo">
-    <h2 class="logo-header">Ketting</h2>
+    <img class="logo-img" src="@/assets/ketting.webp" alt="Ketting Logo Image">
+    <h2 class="logo-header" aria-label="Ketting Logo Text">Ketting</h2>
   </div>
 </template>
 

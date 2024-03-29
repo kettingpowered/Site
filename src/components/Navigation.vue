@@ -1,23 +1,24 @@
 <template>
   <div class="nav-menu">
     <div class="mobile-button-group">
-      <font-awesome-icon :icon="this.showMobileMenu ? 'bars-staggered' : 'bars'" id="mobile-button" @click="showMenu" />
+      <font-awesome-icon :icon="'bars'" id="mobile-button" @click="showMenu" />
+      <font-awesome-icon :icon="'bars-staggered'" id="mobile-button" class="hidden" @click="closeMenu" />
       <Logo id="logo-mobile" />
     </div>
-    <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
+    <div class="nav-content closed-menu">
       <Logo id="logo" />
-      <menu class="nav-items">
+      <menu class="nav-items" aria-label="Navigation Menu">
         <router-link class="nav-item" @click="closeMenu" to="/">Home</router-link>
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'FAQ' }">FAQ</router-link>
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Team' }">Team</router-link>
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Download' }">Download</router-link>
       </menu>
       <div style="flex-grow: 1"></div>
-      <div class="navbar-icons">
-        <a class="navbar-icon" :href="global.discordUrl" target="_blank">
+      <div class="navbar-icons" aria-label="Other Useful Links">
+        <a class="navbar-icon" :href="global.discordUrl" target="_blank" aria-label="Discord Link">
           <font-awesome-icon :icon="['fab', 'discord']" />
         </a>
-        <a class="navbar-icon" :href="global.githubUrl" target="_blank">
+        <a class="navbar-icon" :href="global.githubUrl" target="_blank" aria-label="Github Link">
           <font-awesome-icon :icon="['fab', 'github']" />
         </a>
       </div>
@@ -26,7 +27,12 @@
 </template>
 
 <script>
-import Logo from "./Logo.vue";
+import $ from 'jquery';
+import Logo from './Logo.vue';
+
+const menuOpen = ".nav-menu .mobile-button-group #mobile-button:nth-child(1)";
+const menuClosed = ".nav-menu .mobile-button-group #mobile-button:nth-child(2)";
+const menuContent = ".nav-menu .nav-content";
 
 export default {
   data() {
@@ -36,10 +42,20 @@ export default {
   },
   methods: {
     showMenu() {
-      this.showMobileMenu = !this.showMobileMenu;
+      this.showMobileMenu = true;
+      $(menuOpen).addClass("hidden");
+      $(menuClosed).removeClass("hidden");
+      const menuContentObj = $(menuContent);
+      menuContentObj.removeClass("closed-menu");
+      menuContentObj.addClass("open-menu");
     },
     closeMenu() {
       this.showMobileMenu = false;
+      $(menuOpen).removeClass("hidden");
+      $(menuClosed).addClass("hidden");
+      const menuContentObj = $(menuContent);
+      menuContentObj.addClass("closed-menu");
+      menuContentObj.removeClass("open-menu");
     },
   },
   components: {
@@ -49,6 +65,9 @@ export default {
 </script>
 
 <style scoped>
+.hidden {
+  display: none;
+}
 .nav-menu {
   background-color: var(--color-primary);
 }

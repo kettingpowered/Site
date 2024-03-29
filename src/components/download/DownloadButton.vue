@@ -44,8 +44,8 @@ export default {
       <p id="version">{{ kettingVersion }}</p>
       <span id="unsupported" v-if="isUnsupportedVersion">unsupported</span>
       <div id="right">
-        <a id="compare" v-if="compareVersion != null" :href="global.softwareUrl() + 'compare/' + compareVersion + '...' + version" target="_blank">What's new?</a>
-        <p id="get" @click="this.$emit('toggle-details')">Get it</p>
+        <a id="compare" v-if="compareVersion != null" :href="global.softwareUrl() + 'compare/' + compareVersion + '...' + version" target="_blank" tabindex=0 >What's new?</a>
+        <p id="get" @click="this.$emit('toggle-details')" tabindex=0 role="note" aria-label="Get it">Get it</p>
       </div>
     </div>
     <div id="details" v-if="detailsActive">

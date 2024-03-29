@@ -1,5 +1,6 @@
 <script>
 import DownloadButton from "@/components/download/DownloadButton.vue";
+import {XMLParser} from "fast-xml-parser";
 
 export default {
   name: "Download",
@@ -18,26 +19,20 @@ export default {
   },
   methods: {
     async fetchReleases() {
-      try {
-        const response = await fetch(this.global.downloadUrl);
-        if (!response.ok)
-          throw new Error("Failed to fetch releases");
+      const response = await fetch(this.global.downloadUrl);
+      if (!response.ok)
+        throw new Error("Failed to fetch releases");
+      //Don't catch error. We Pre-Generate the Site on the server, so this is thrown build time.
 
-        const xml = await response.text();
-        this.parseXML(xml);
-        this.loaded = true;
-      } catch (error) {
-        console.error(error);
-        this.errored = true;
-      }
+      const xml = await response.text();
+      this.parseXML(xml);
+      this.loaded = true;
     },
     parseXML(xml) {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(xml, "application/xml");
-      const versions = doc.querySelectorAll("version");
-      versions.forEach((version) => {
-        this.releases.push(version.textContent);
-      });
+      const parser = new XMLParser();
+      const doc = parser.parse(xml);
+      // noinspection JSUnresolvedReference
+      this.releases = doc.metadata.versioning.versions.version;
       this.sortReleases();
     },
     sortReleases() {
@@ -91,8 +86,8 @@ export default {
       this.selectedRelease = version;
     }
   },
-  created() {
-    this.fetchReleases();
+  async created() {
+    await this.fetchReleases();
   },
   computed: {
     filteredReleases() {
@@ -117,7 +112,7 @@ export default {
     <div id="display" v-else>
       <div class="version-container" v-for="[mcVersion, versions] in filteredReleases">
         <div class="switch">
-          <div class="option" v-for="version in orderedReleases.keys()" :key="version" :class="{ 'selected': selectedRelease === version }" @click="setSelectedRelease(version)">{{ version }}</div>
+          <div class="option" v-for="version in orderedReleases.keys()" :key="version" :class="{ 'selected': selectedRelease === version }" @click="setSelectedRelease(version)" :aria-label="'Minecraft-Version '+version" tabindex=0>{{ version }}</div>
           <div class="background" :style="{ left: buttonBgPos, width: buttonBgWidth }"></div>
         </div>
         <div class="version-buttons">
