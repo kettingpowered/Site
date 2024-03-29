@@ -1,13 +1,6 @@
 <script>
 export default {
   name: "Member",
-  head(){
-    return {link: {
-      rel: 'prefetch',
-      as: 'image',
-      href: this.image,
-    }};
-  },
   props: {
     name: {
       type: String,
@@ -81,7 +74,7 @@ export default {
 <template>
   <div class="member">
     <div class="avatar">
-      <img :src="image" loading="lazy" alt="avatar" />
+      <img :src="image" alt="avatar" />
     </div>
     <div>
       <div class="info">
