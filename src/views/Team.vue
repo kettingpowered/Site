@@ -33,6 +33,13 @@ export default {
       }
     };
   },
+  data: function () {
+    return {
+      chris: chris,
+      djjewl: djjewl,
+      larcek: larcek,
+    }
+  },
   components: {
     Member
   }
