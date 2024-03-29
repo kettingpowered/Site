@@ -1,6 +1,11 @@
 <script>
 export default {
   name: "NotFound",
+  head() {
+    return {
+      title: this.unhead.formattedTitle("404"),
+    };
+  },
   methods: {
     getRandomCaption() {
       const messages = [

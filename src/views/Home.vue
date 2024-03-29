@@ -4,6 +4,11 @@ import AboutSection from '@/components/home/sections/About.vue';
 import StatsSection from '@/components/home/sections/Stats.vue';
 
 export default {
+  head() {
+    return {
+      title: this.unhead.baseTitle,
+    };
+  },
   components: {
     MainSection,
     AboutSection,

@@ -3,6 +3,11 @@ import Member from "@/components/team/Member.vue";
 
 export default {
   name: "Team",
+  head() {
+    return {
+      title: this.unhead.formattedTitle("Meet the Team"),
+    };
+  },
   components: {
     Member
   }

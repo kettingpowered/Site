@@ -4,6 +4,11 @@ import {XMLParser} from "fast-xml-parser";
 
 export default {
   name: "Download",
+  head() {
+    return {
+      title: this.unhead.formattedTitle("Downloads"),
+    };
+  },
   components: {
     DownloadButton
   },
