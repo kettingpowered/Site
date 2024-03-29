@@ -10,6 +10,8 @@ useHead({
 </script>
 <script>
 import chris from '@/assets/team-chris.webp';
+import djjewl from '@/assets/team-djjewl.webp';
+import larcek from '@/assets/team-larcek.webp';
 import Member from "@/components/team/Member.vue";
 
 export default {
@@ -67,7 +69,7 @@ export default {
       />
       <Member
           name="Larcek"
-          image="https://cdn.discordapp.com/avatars/178606113321779209/c0d65a7afb017b2e56a6cf43e9a0ae82.webp?size=256"
+          :image="larcek"
           :alternate-names="[{icon: ['fab', 'github'], name: 'LarcekGiglamesh'}]"
           :roles="['Admin', 'Staff']"
           :description="['Provides Server for C0D3 M4513R']"
@@ -75,7 +77,7 @@ export default {
       />
       <Member
           name="DjJewl"
-          image="https://cdn.discordapp.com/avatars/135198198498197504/8fe75c8fc53e926e3a3ed1924df694cb.webp?size=256"
+          :image="djjewl"
           :alternate-names="[{icon: ['fab', 'github'], name: 'wolflord212312'}]"
           :roles="['Staff']" :socials="['https://github.com/wolflord212312', 'https://www.youtube.com/channel/UCZGOR6R6054S8h3UYlG1eyg']"
       />
