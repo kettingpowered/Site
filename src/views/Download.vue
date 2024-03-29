@@ -2,10 +2,7 @@
 import {useHead} from "@unhead/vue";
 
 useHead({
-  link: {
-    rel: 'canonical',
-    href: 'https://kettingpowered.org/download/'
-  }
+
 })
 </script>
 
@@ -33,9 +30,13 @@ export default {
         },
         {
           property: 'og:url',
-          content: this.global.url + 'download'
+          content: this.global.url + 'download/'
         },
-      ]
+      ],
+      link: {
+        rel: 'canonical',
+        href: this.global.url + 'download/'
+      }
     };
   },
   components: {

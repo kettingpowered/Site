@@ -35,7 +35,11 @@ export default {
           property: 'og:url',
           content: this.global.url
         },
-      ]
+      ],
+      link: {
+        rel: 'canonical',
+        href: this.global.url
+      }
     };
   },
   components: {

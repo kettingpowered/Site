@@ -1,14 +1,3 @@
-<script setup>
-import {useHead} from "@unhead/vue";
-
-useHead({
-  link: {
-    rel: 'canonical',
-    href: 'https://kettingpowered.org/team/'
-  }
-})
-</script>
-
 <script>
 import chris from '@/assets/team-chris.webp';
 import djjewl from '@/assets/team-djjewl.webp';
@@ -35,9 +24,13 @@ export default {
         },
         {
           property: 'og:url',
-          content: this.global.url + 'team'
+          content: this.global.url + 'team/'
         },
-      ]
+      ],
+      link: {
+        rel: 'canonical',
+        href: this.global.url + 'team/'
+      }
     };
   },
   components: {
