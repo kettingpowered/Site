@@ -40,7 +40,7 @@ export const createApp = ViteSSG(
               component: () => import('@/views/Download.vue')
           },
           {
-              path: '/:catchAll(.*)',
+              path: '/404',
               name: 'NotFound',
               component: () => import('@/views/NotFound.vue')
           }
