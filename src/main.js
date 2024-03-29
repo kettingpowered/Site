@@ -59,7 +59,6 @@ export const createApp = ViteSSG(
             }
         }
 
-        createHead();
         app.mixin(VueHeadMixin);
         //unhead setup end
 

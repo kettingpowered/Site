@@ -1,3 +1,13 @@
+<script setup>
+import {useHead} from "@unhead/vue";
+
+useHead({
+  link: {
+    rel: 'canonical',
+    href: 'https://kettingpowered.org/team'
+  }
+})
+</script>
 <script>
 import chris from '@/assets/team-chris.webp';
 import Member from "@/components/team/Member.vue";

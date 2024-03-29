@@ -1,3 +1,13 @@
+<script setup>
+import {useHead} from "@unhead/vue";
+
+useHead({
+  link: {
+    rel: 'canonical',
+    href: 'https://kettingpowered.org/download'
+  }
+})
+</script>
 <script>
 import DownloadButton from "@/components/download/DownloadButton.vue";
 import {XMLParser} from "fast-xml-parser";
