@@ -26,6 +26,10 @@ export default {
           property: 'og:url',
           content: this.global.url + 'team/'
         },
+        {
+          name: 'theme-color',
+          content: '#770708'
+        },
       ],
       link: {
         rel: 'canonical',

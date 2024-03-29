@@ -23,6 +23,10 @@ export default {
           property: 'og:url',
           content: this.global.url + 'faq/'
         },
+        {
+          name: 'theme-color',
+          content: '#770708'
+        },
       ],
       link: {
         rel: 'canonical',
