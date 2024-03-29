@@ -2,7 +2,6 @@ import './assets/main.css'
 
 import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
-import { createHead } from '@unhead/vue'
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -40,14 +39,8 @@ export const createApp = ViteSSG(
                 name: 'Download',
                 component: () => import('@/views/Download.vue')
             },
-            //Explicitly generate page at 404. Otherwise, SSG doesn't generate a site for this.
             {
                 path: '/404',
-                name: 'NotFound',
-                component: () => import('@/views/NotFound.vue')
-            },
-            {
-                path: '/:catchAll(.*)',
                 name: 'NotFound',
                 component: () => import('@/views/NotFound.vue')
             }
@@ -57,7 +50,6 @@ export const createApp = ViteSSG(
     // function to have custom setups
     ({ app, router, routes, isClient, initialState }) => {
         app.component('font-awesome-icon', FontAwesomeIcon)
-            .use(createHead())
         //Create some global properties
         app.config.globalProperties.global = {
             discordUrl: "https://discord.kettingpowered.org/",
