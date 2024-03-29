@@ -1,7 +1,7 @@
 import './assets/main.css'
 
 import { ViteSSG } from 'vite-ssg'
-import { createHead, VueHeadMixin } from '@unhead/vue'
+import { VueHeadMixin } from '@unhead/vue'
 import App from './App.vue'
 
 /* import the fontawesome core */

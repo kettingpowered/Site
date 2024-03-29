@@ -67,12 +67,6 @@ export default {
       //youtube
       if (url.includes('youtube.com'))
         return 'Youtube';
-    },
-    getRoleColor(role) {
-      if (this.discordRoles.hasOwnProperty(role))
-        return this.discordRoles[role];
-      else
-        return "white";
     }
   }
 }

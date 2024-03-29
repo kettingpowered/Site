@@ -1,11 +1,3 @@
-<script setup>
-import {useHead} from "@unhead/vue";
-
-useHead({
-
-})
-</script>
-
 <script>
 import DownloadButton from "@/components/download/DownloadButton.vue";
 import {XMLParser} from "fast-xml-parser";

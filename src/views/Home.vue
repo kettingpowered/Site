@@ -1,14 +1,3 @@
-<script setup>
-import {useHead} from "@unhead/vue";
-
-useHead({
-  link: {
-    rel: 'canonical',
-    href: 'https://kettingpowered.org/'
-  }
-})
-</script>
-
 <script>
 import MainSection from '@/components/home/sections/Main.vue';
 import AboutSection from '@/components/home/sections/About.vue';
