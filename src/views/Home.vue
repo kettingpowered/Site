@@ -8,6 +8,7 @@ useHead({
   }
 })
 </script>
+
 <script>
 import MainSection from '@/components/home/sections/Main.vue';
 import AboutSection from '@/components/home/sections/About.vue';
@@ -17,6 +18,24 @@ export default {
   head() {
     return {
       title: this.unhead.baseTitle,
+      meta: [
+        {
+          property: 'og:title',
+          content: this.unhead.baseTitle,
+        },
+        {
+          property: 'og:description',
+          content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
+        },
+        {
+          property: 'og:image',
+          content: `${this.global.githubUrl}.png`
+        },
+        {
+          property: 'og:url',
+          content: this.global.url
+        },
+      ]
     };
   },
   components: {

@@ -8,6 +8,7 @@ useHead({
   }
 })
 </script>
+
 <script>
 import chris from '@/assets/team-chris.webp';
 import djjewl from '@/assets/team-djjewl.webp';
@@ -19,6 +20,24 @@ export default {
   head() {
     return {
       title: this.unhead.formattedTitle("Meet the Team"),
+      meta: [
+        {
+          property: 'og:title',
+          content: this.unhead.formattedTitle("Meet the Team"),
+        },
+        {
+          property: 'og:description',
+          content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
+        },
+        {
+          property: 'og:image',
+          content: `${this.global.githubUrl}.png`
+        },
+        {
+          property: 'og:url',
+          content: this.global.url + 'team'
+        },
+      ]
     };
   },
   components: {
