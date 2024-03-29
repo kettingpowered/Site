@@ -15,28 +15,28 @@ export default {
     <div class="members">
       <Member
           name="JustRed23"
-          image="https://github.com/JustRed23.png"
+          image="https://github.com/JustRed23.png?size=256"
           :roles="['Owner', 'Contributor']"
           :description="['Creator, Owner & Maintainer']"
           :socials="['https://github.com/JustRed23','https://twitter.com/JustRed23', 'https://twitch.tv/JustRed23', 'https://youtube.com/@justred2337']"
       />
       <Member
           name="C0D3 M4513R"
-          image="https://github.com/C0D3-M4513R.png"
+          image="https://github.com/C0D3-M4513R.png?size=256"
           :roles="['Admin', 'Contributor']"
           :description="['Creator of KettingLauncher', 'Hosts Ketting Releases', 'Hosts Ketting\'s Website']"
           :socials="['https://github.com/C0D3-M4513R','https://twitter.com/C0D3M4513R', 'https://www.twitch.tv/c0d3_m4513r', 'https://www.youtube.com/channel/UC30moJmnYyVmD2RkhRjOxpw']"
       />
       <Member
           name="TonimatasDEV"
-          image="https://github.com/TonimatasDEV.png"
+          image="https://github.com/TonimatasDEV.png?size=256"
           :roles="['Contributor']"
           :description="['Frequently Fixes Mixin Issues']"
           :socials="['https://github.com/TonimatasDEV','https://www.twitch.tv/tonimatasdev', 'https://www.youtube.com/channel/UCUB8iy2bYCvlF2JZBi3vTIw']"
       />
       <Member
           name="Almighty-Satan"
-          image="https://github.com/Almighty-Satan.png"
+          image="https://github.com/Almighty-Satan.png?size=256"
           :alternate-names="[{icon: ['fab', 'discord'], name: 'buccy'}]"
           :roles="['Contributor']"
           :description="['Some Java Hacks for KettingLauncher']"
@@ -44,7 +44,7 @@ export default {
       />
       <Member
           name="Malcolm"
-          image="https://github.com/m1lc0lm.png"
+          image="https://github.com/m1lc0lm.png?size=256"
           :description="['Some magic in MagmaLauncher']"
           :roles="['Contributor']"
           :socials="['https://github.com/m1lc0lm', 'https://www.twitch.tv/malcolm3000']"
@@ -65,13 +65,13 @@ export default {
       />
       <Member
           name="LeStegii"
-          image="https://github.com/LeStegii.png"
+          image="https://github.com/LeStegii.png?size=256"
           :roles="['Staff']"
           :socials="['https://github.com/LeStegii', 'https://www.twitch.tv/ueberallgebannt', 'https://www.youtube.com/channel/UCM9WaPEk7RclWZyyFcYRAwQ']"
       />
       <Member
           name="p0t4t0sandwich"
-          image="https://github.com/p0t4t0sandwich.png"
+          image="https://github.com/p0t4t0sandwich.png?size=256"
           :alternate-names="[{icon: ['fab', 'discord'], name: 'ThePotatoKing'}]"
           :roles="['Staff']"
           :socials="['https://github.com/p0t4t0sandwich', 'https://www.twitch.tv/bob_and_sparkles', 'https://www.youtube.com/channel/UCB70eOPhOIWr7H-J58OZAZw']"
@@ -85,13 +85,13 @@ export default {
       />
       <Member
           name="Mattaous"
-          image="https://github.com/Mattaous.png"
+          image="https://github.com/Mattaous.png?size=256"
           :roles="['Helper']"
           :socials="['https://github.com/Mattaous', 'https://www.twitch.tv/mattaoustv', 'https://www.youtube.com/channel/UCvnxsFaR7JL3chGAGADurHA']"
       />
       <Member
           name="Soapy7261"
-          image="https://github.com/Soapy7261.png"
+          image="https://github.com/Soapy7261.png?size=256"
           :roles="['Helper']"
           :socials="['https://github.com/Soapy7261']"
       />
