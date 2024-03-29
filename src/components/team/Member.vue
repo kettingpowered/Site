@@ -92,8 +92,8 @@ export default {
         </div>
       </div>
       <div class="role-container">
-        <div class="role" v-for="role in roles" :key="role" :style="'border-color: ' + getRoleColor(role)">
-          <span class="role-color" :style="'background-color: ' + getRoleColor(role)"></span>
+        <div class="role" v-for="role in roles" :key="role" :class="role.toLowerCase()">
+          <span class="role-color" :class="role.toLowerCase()"></span>
           <span class="role-name">{{ role }}</span>
         </div>
       </div>
@@ -112,7 +112,24 @@ export default {
   </div>
 </template>
 
+<!--suppress CssUnusedSymbol -->
 <style scoped>
+.owner {
+  --role-color: #660000;
+}
+.admin {
+  --role-color: #ffcc00;
+}
+.staff {
+  --role-color: #ff6633;
+}
+.helper {
+  --role-color: #ff3333;
+}
+.contributor {
+  --role-color: #33cc99;
+}
+
 .member {
   display: flex;
   flex-direction: column;
@@ -163,12 +180,14 @@ export default {
   border: 2px solid;
   padding: 0.25rem .5rem;
   user-select: none;
+  border-color: var(--role-color);
 }
 
 .role-color {
   width: .8rem;
   height: .8rem;
   border-radius: 50%;
+  background-color: var(--role-color);
 }
 
 .role-name {

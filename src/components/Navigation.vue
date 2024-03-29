@@ -13,7 +13,7 @@
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Team' }">Team</router-link>
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Download' }">Download</router-link>
       </menu>
-      <div style="flex-grow: 1"></div>
+      <div class="flex-grow-all"></div>
       <div class="navbar-icons" aria-label="Other Useful Links">
         <a class="navbar-icon" :href="global.discordUrl" target="_blank" aria-label="Discord Link">
           <font-awesome-icon :icon="['fab', 'discord']" />
@@ -68,6 +68,11 @@ export default {
 .hidden {
   display: none;
 }
+
+.flex-grow-all {
+  flex-grow: 1
+}
+
 .nav-menu {
   background-color: var(--color-primary);
 }

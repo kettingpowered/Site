@@ -5,7 +5,10 @@ import { createHead, VueHeadMixin } from '@unhead/vue'
 import App from './App.vue'
 
 /* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library, config} from '@fortawesome/fontawesome-svg-core'
+config.autoAddCss = false; //This causes a CSP error
+import "@fortawesome/fontawesome-svg-core/styles.css"; //we include it instead directly here.
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* ICONS HERE */
@@ -81,14 +84,5 @@ export const createApp = ViteSSG(
             },
             unsupportedVersions: ["1.20.3"]
         };
-
-        //Discord Roles and their colors
-        app.config.globalProperties.discordRoles = {
-            "Owner": "#660000",
-            "Admin": "#ffcc00",
-            "Staff": "#ff6633",
-            "Helper": "#ff3333",
-            "Contributor": "#33cc99",
-        }
     }
 )
