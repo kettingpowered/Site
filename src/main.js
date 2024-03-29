@@ -1,6 +1,7 @@
 import './assets/main.css'
 
 import { ViteSSG } from 'vite-ssg'
+import { createHead, VueHeadMixin } from '@unhead/vue'
 import App from './App.vue'
 
 /* import the fontawesome core */
@@ -49,6 +50,19 @@ export const createApp = ViteSSG(
     },
     // function to have custom setups
     ({ app, router, routes, isClient, initialState }) => {
+        //unhead setup start
+        app.config.globalProperties.unhead = {
+            baseTitle: "Ketting",
+            separator: " • ",
+            formattedTitle: function(pageTitle) {
+                return this.baseTitle + this.separator + pageTitle;
+            }
+        }
+
+        createHead();
+        app.mixin(VueHeadMixin);
+        //unhead setup end
+
         app.component('font-awesome-icon', FontAwesomeIcon)
         //Create some global properties
         app.config.globalProperties.global = {
