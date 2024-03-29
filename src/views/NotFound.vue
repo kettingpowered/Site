@@ -1,6 +1,29 @@
 <script>
 export default {
   name: "NotFound",
+  head() {
+    return {
+      title: this.unhead.formattedTitle("404"),
+      meta: [
+        {
+          property: 'og:title',
+          content: this.unhead.formattedTitle("404"),
+        },
+        {
+          property: 'og:description',
+          content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
+        },
+        {
+          property: 'og:image',
+          content: this.global.imageUrl
+        },
+        {
+          property: 'og:url',
+          content: this.global.url + '404'
+        },
+      ]
+    };
+  },
   methods: {
     getRandomCaption() {
       const messages = [

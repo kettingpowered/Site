@@ -1,9 +1,43 @@
+<script setup>
+import {useHead} from "@unhead/vue";
+
+useHead({
+  link: {
+    rel: 'canonical',
+    href: 'https://kettingpowered.org/download'
+  }
+})
+</script>
+
 <script>
 import DownloadButton from "@/components/download/DownloadButton.vue";
 import {XMLParser} from "fast-xml-parser";
 
 export default {
   name: "Download",
+  head() {
+    return {
+      title: this.unhead.formattedTitle("Downloads"),
+      meta: [
+        {
+          property: 'og:title',
+          content: this.unhead.formattedTitle("Downloads"),
+        },
+        {
+          property: 'og:description',
+          content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
+        },
+        {
+          property: 'og:image',
+          content: this.global.imageUrl
+        },
+        {
+          property: 'og:url',
+          content: this.global.url + 'download'
+        },
+      ]
+    };
+  },
   components: {
     DownloadButton
   },

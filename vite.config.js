@@ -23,9 +23,9 @@ export default defineConfig({
     rollupOptions: {
       output:{
         manualChunks(id) {
-          if (id.includes("@fortawesome/free-solid-svg-icons")) return "fas";
-          if (id.includes("@fortawesome/free-regular-svg-icons")) return "far";
-          if (id.includes("@fortawesome/free-brands-svg-icons")) return "fab";
+          if (id.includes('@fortawesome/free-solid-svg-icons')) return 'fas';
+          if (id.includes('@fortawesome/free-regular-svg-icons')) return 'far';
+          if (id.includes('@fortawesome/free-brands-svg-icons')) return 'fab';
         }
       }
     }

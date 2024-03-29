@@ -1,8 +1,45 @@
+<script setup>
+import {useHead} from "@unhead/vue";
+
+useHead({
+  link: {
+    rel: 'canonical',
+    href: 'https://kettingpowered.org/team'
+  }
+})
+</script>
+
 <script>
+import chris from '@/assets/team-chris.webp';
+import djjewl from '@/assets/team-djjewl.webp';
+import larcek from '@/assets/team-larcek.webp';
 import Member from "@/components/team/Member.vue";
 
 export default {
   name: "Team",
+  head() {
+    return {
+      title: this.unhead.formattedTitle("Meet the Team"),
+      meta: [
+        {
+          property: 'og:title',
+          content: this.unhead.formattedTitle("Meet the Team"),
+        },
+        {
+          property: 'og:description',
+          content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
+        },
+        {
+          property: 'og:image',
+          content: this.global.imageUrl
+        },
+        {
+          property: 'og:url',
+          content: this.global.url + 'team'
+        },
+      ]
+    };
+  },
   components: {
     Member
   }
@@ -51,7 +88,7 @@ export default {
       />
       <Member
           name="Larcek"
-          image="https://cdn.discordapp.com/avatars/178606113321779209/c0d65a7afb017b2e56a6cf43e9a0ae82.webp?size=256"
+          :image="larcek"
           :alternate-names="[{icon: ['fab', 'github'], name: 'LarcekGiglamesh'}]"
           :roles="['Admin', 'Staff']"
           :description="['Provides Server for C0D3 M4513R']"
@@ -59,7 +96,7 @@ export default {
       />
       <Member
           name="DjJewl"
-          image="https://cdn.discordapp.com/avatars/135198198498197504/8fe75c8fc53e926e3a3ed1924df694cb.webp?size=256"
+          :image="djjewl"
           :alternate-names="[{icon: ['fab', 'github'], name: 'wolflord212312'}]"
           :roles="['Staff']" :socials="['https://github.com/wolflord212312', 'https://www.youtube.com/channel/UCZGOR6R6054S8h3UYlG1eyg']"
       />
@@ -78,7 +115,7 @@ export default {
       />
       <Member
           name="Chris"
-          image="https://cdn.discordapp.com/avatars/228145889988837385/4e4988596133076ee70c643b8995dfed.webp?size=256"
+          :image="chris"
           :alternate-names="[{icon: ['fab', 'github'], name: 'Kit4444'}]"
           :roles="['Helper']"
           :socials="['https://github.com/Kit4444', 'https://www.twitch.tv/chriswille2856', 'https://www.youtube.com/channel/UCkTayY7PX4oV2DBABEaDQKQ']"

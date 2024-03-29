@@ -1,9 +1,43 @@
+<script setup>
+import {useHead} from "@unhead/vue";
+
+useHead({
+  link: {
+    rel: 'canonical',
+    href: 'https://kettingpowered.org/'
+  }
+})
+</script>
+
 <script>
 import MainSection from '@/components/home/sections/Main.vue';
 import AboutSection from '@/components/home/sections/About.vue';
 import StatsSection from '@/components/home/sections/Stats.vue';
 
 export default {
+  head() {
+    return {
+      title: this.unhead.baseTitle,
+      meta: [
+        {
+          property: 'og:title',
+          content: this.unhead.baseTitle,
+        },
+        {
+          property: 'og:description',
+          content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
+        },
+        {
+          property: 'og:image',
+          content: this.global.imageUrl
+        },
+        {
+          property: 'og:url',
+          content: this.global.url
+        },
+      ]
+    };
+  },
   components: {
     MainSection,
     AboutSection,

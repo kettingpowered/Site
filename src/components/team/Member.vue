@@ -1,6 +1,13 @@
 <script>
 export default {
   name: "Member",
+  head(){
+    return {link: {
+      rel: 'prefetch',
+      as: 'image',
+      href: this.image,
+    }};
+  },
   props: {
     name: {
       type: String,
