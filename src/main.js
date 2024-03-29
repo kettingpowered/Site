@@ -39,8 +39,14 @@ export const createApp = ViteSSG(
                 name: 'Download',
                 component: () => import('@/views/Download.vue')
             },
+            //Explicitly generate page at 404. Otherwise, SSG doesn't generate a site for this.
             {
                 path: '/404',
+                name: 'NotFound',
+                component: () => import('@/views/NotFound.vue')
+            },
+            {
+                path: '/:catchAll(.*)',
                 name: 'NotFound',
                 component: () => import('@/views/NotFound.vue')
             }
