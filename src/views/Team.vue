@@ -4,7 +4,7 @@ import {useHead} from "@unhead/vue";
 useHead({
   link: {
     rel: 'canonical',
-    href: 'https://kettingpowered.org/team'
+    href: 'https://kettingpowered.org/team/'
   }
 })
 </script>
