@@ -65,8 +65,10 @@ export const createApp = ViteSSG(
         app.component('font-awesome-icon', FontAwesomeIcon)
         //Create some global properties
         app.config.globalProperties.global = {
+            url: "https://kettingpowered.org/",
             discordUrl: "https://discord.kettingpowered.org/",
             githubUrl: "https://github.com/kettingpowered/",
+            imageUrl: "https://github.com/kettingpowered.png",
             downloadUrl: "https://nexus.c0d3m4513r.com/custom/forge-ketting-versions.xml",
             softwareUrl: function() {
                 return this.githubUrl + "Ketting-1-20-x/";
