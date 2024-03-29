@@ -28,7 +28,7 @@ export default {
         },
         {
           property: 'og:image',
-          content: `${this.global.githubUrl}.png`
+          content: this.global.imageUrl
         },
         {
           property: 'og:url',
