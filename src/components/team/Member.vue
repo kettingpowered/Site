@@ -89,6 +89,12 @@ export default {
         <span class="role-name">{{ role }}</span>
       </div>
     </div>
+    <details class="description" v-if="description">
+      <summary>Details</summary>
+      <ul v-for="sDescription in description">
+        <li>{{sDescription}}</li>
+      </ul>
+    </details>
     <div class="socials">
       <a v-for="social in socials" :href="social" target="_blank" :aria-label="getLabelFromUrl(social)">
         <font-awesome-icon :icon="determineSocialIconFromUrl(social)" />
@@ -159,6 +165,18 @@ export default {
 
 .role-name {
   font-size: .8rem;
+}
+
+.description summary {
+  cursor: pointer;
+  text-align: center;
+}
+
+/* todo: this still doesn't look that good */
+.description {
+  margin-top: auto;
+  font-size: 0.8rem;
+  width: 100%;
 }
 
 .socials {
