@@ -30,6 +30,11 @@ export default {
         this.$el.getElementsByClassName('detail')[0].removeAttribute('open');
       }
     }
+  },
+  mounted() {
+    if (this.expanded) {
+      this.$el.getElementsByClassName('detail')[0].setAttribute('open', '');
+    }
   }
 }
 </script>
