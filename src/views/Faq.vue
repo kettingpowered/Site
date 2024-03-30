@@ -82,17 +82,17 @@ export default {
     QnA
   },
   methods: {
-    getTitle(hash) {
-      if (hash) {
-        const qna = this.getQuestionById(hash.substring(1));
+    getTitle(id) {
+      if (id) {
+        const qna = this.getQuestionById(id);
         if (qna)
           return qna.question;
       }
       return this.unhead.formattedTitle("FAQ");
     },
-    getDescription(hash) {
-      if (hash) {
-        const qna = this.getQuestionById(hash.substring(1));
+    getDescription(id) {
+      if (id) {
+        const qna = this.getQuestionById(id);
         if (qna)
           return qna.safe || qna.answer;
       }
@@ -109,15 +109,15 @@ export default {
       return "sides";
     },
     expanded(id) {
-      return this.$route.hash === `#${id}`;
+      return this.$route.params.id === id;
     }
   },
   computed: {
     ogTitle() {
-      return this.getTitle(this.$route.hash);
+      return this.getTitle(this.$route.params.id);
     },
     ogDescription() {
-      return this.getDescription(this.$route.hash);
+      return this.getDescription(this.$route.params.id);
     }
   }
 }

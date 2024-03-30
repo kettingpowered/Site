@@ -34,6 +34,11 @@ export const createApp = ViteSSG(
                 component: () => import('@/views/Faq.vue')
             },
             {
+                path: '/faq/:id?',
+                name: 'FAQ',
+                component: () => import('@/views/Faq.vue')
+            },
+            {
                 path: '/team',
                 name: 'Team',
                 component: () => import('@/views/Team.vue')
