@@ -134,8 +134,8 @@ summary {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 2rem;
-  font-size: 1.5rem;
+  right: 1rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -148,9 +148,11 @@ summary {
 
 .notification-banner {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 20px;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  font-size: 0.8rem;
   background-color: var(--color-background-mute);
   border-radius: 5px;
   z-index: 9999;
