@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import {defineConfig, splitVendorChunkPlugin} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
+import faqIds from '@/data/faq/questions.js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -32,5 +33,11 @@ export default defineConfig({
     }
   },
   ssgOptions: {
+    /*include the dynamic FAQ routes*/
+    includedRoutes(paths, routes) {
+      return routes.flatMap(route => {
+        return route.path === '/faq/:id?' ? faqIds.map(id => `/faq/${id}`) : route.path
+      });
+    }
   }
 })
