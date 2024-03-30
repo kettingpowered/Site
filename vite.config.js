@@ -37,6 +37,7 @@ export default defineConfig({
     /*include the dynamic FAQ routes*/
     includedRoutes(paths, routes) {
       return routes.flatMap(route => {
+        if (route.path === '/:catchAll(.*)') return []
         return route.path === '/faq/:id?' ? faqIds.map(id => `/faq/${id}`) : route.path
       });
     }
