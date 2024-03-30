@@ -22,7 +22,7 @@ export default {
         },
         {
           property: 'og:url',
-          content: this.global.url + 'download/'
+          content: this.global.url + 'download'
         },
         {
           name: 'theme-color',
@@ -31,7 +31,7 @@ export default {
       ],
       link: {
         rel: 'canonical',
-        href: this.global.url + 'download/'
+        href: this.global.url + 'download'
       }
     };
   },
