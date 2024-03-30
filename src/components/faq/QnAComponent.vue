@@ -1,14 +1,16 @@
 <script>
 export default {
   name: "QnAComponent",
+  data() {
+    return {
+      showCopyIcon: false,
+      copyNotification: false
+    }
+  },
   props: {
-    question: {
-      type: String,
-      required: true
-    },
-    answer: {
-      type: String,
-      required: true
+    qna: {
+      type: Object,
+      required: true,
     },
     border: {
       type: String,
@@ -35,6 +37,17 @@ export default {
     if (this.expanded) {
       this.$el.getElementsByClassName('detail')[0].setAttribute('open', '');
     }
+  },
+  methods: {
+    copyToClipboard(event) {
+      const url = this.global.url + 'faq/' + this.qna.id;
+      navigator.clipboard.writeText(url);
+      this.copyNotification = true;
+      setTimeout(() => {
+        this.copyNotification = false;
+      }, 2000);
+      event.preventDefault();
+    }
   }
 }
 </script>
@@ -42,9 +55,15 @@ export default {
 <template>
   <div :class="['qna', border]">
     <details class="detail">
-      <summary>{{ question }}</summary>
-      <div class="desc" v-html="answer"></div>
+      <summary @mouseover="showCopyIcon = true" @mouseleave="showCopyIcon = false">
+        {{ qna.question }}
+        <font-awesome-icon class="copy-icon" v-if="showCopyIcon" icon="chain" @click="copyToClipboard"/>
+      </summary>
+      <div class="desc" v-html="qna.answer"></div>
     </details>
+    <div v-if="copyNotification" class="notification-banner">
+      Link copied to clipboard!
+    </div>
   </div>
 </template>
 
@@ -91,6 +110,7 @@ details {
 summary {
   font-size: 1.5rem;
   padding: 1rem;
+  position: relative;
 }
 
 .desc {
@@ -108,5 +128,31 @@ summary {
 }
 .desc:deep(a:hover) {
   color: var(--color-link-secondary-hover);
+}
+
+.copy-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.copy-icon {
+  color: var(--color-link-secondary);
+}
+.copy-icon:hover {
+  color: var(--color-link-secondary-hover);
+}
+
+.notification-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: var(--color-background-mute);
+  border-radius: 5px;
+  z-index: 9999;
 }
 </style>

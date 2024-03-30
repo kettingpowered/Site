@@ -89,7 +89,7 @@ export default {
   <div id="content">
     <h1>FAQ</h1>
     <div class="questions">
-      <QnA class="question" v-for="qna in questionsAndAnswers" :id="qna.id" :key="qna.id" :question="qna.question" :answer="qna.answer" :border="getBorder(qna)" :expanded="expanded(qna.id)" />
+      <QnA class="question" v-for="qna in questionsAndAnswers" :id="qna.id" :key="qna.id" :qna="qna" :border="getBorder(qna)" :expanded="expanded(qna.id)" />
     </div>
   </div>
 </template>
