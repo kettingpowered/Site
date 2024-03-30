@@ -33,6 +33,7 @@ export default defineConfig({
     }
   },
   ssgOptions: {
+    dirStyle: "nested",
     /*include the dynamic FAQ routes*/
     includedRoutes(paths, routes) {
       return routes.flatMap(route => {
