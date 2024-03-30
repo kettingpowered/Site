@@ -4,7 +4,8 @@ export default {
   data() {
     return {
       showCopyIcon: false,
-      copyNotification: false
+      copyNotification: false,
+      mobile: false
     }
   },
   props: {
@@ -37,6 +38,8 @@ export default {
     if (this.expanded) {
       this.$el.getElementsByClassName('detail')[0].setAttribute('open', '');
     }
+
+    this.mobile = window.innerWidth <= 1280;
   },
   methods: {
     copyToClipboard(event) {
@@ -50,8 +53,8 @@ export default {
     }
   },
   computed: {
-    mobile() {
-      return window.innerWidth <= 1024;
+    showIcon() {
+      return this.mobile || this.showCopyIcon;
     }
   }
 }
@@ -62,7 +65,7 @@ export default {
     <details class="detail">
       <summary @mouseover="showCopyIcon = true" @mouseleave="showCopyIcon = false">
         {{ qna.question }}
-        <font-awesome-icon class="copy-icon" v-if="showCopyIcon || mobile" icon="chain" @click="copyToClipboard"/>
+        <font-awesome-icon class="copy-icon" v-if="showIcon" icon="chain" @click="copyToClipboard"/>
       </summary>
       <div class="desc" v-html="qna.answer"></div>
     </details>
