@@ -98,10 +98,10 @@ summary {
   background-color: var(--color-background-mute);
 }
 
-.desc >>> a {
+.desc:deep(a) {
   color: var(--color-link-secondary);
 }
-.desc >>> a:hover {
+.desc:deep(a:hover) {
   color: var(--color-link-secondary-hover);
 }
 </style>
