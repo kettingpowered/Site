@@ -48,6 +48,11 @@ export default {
       }, 2000);
       event.preventDefault();
     }
+  },
+  computed: {
+    mobile() {
+      return window.innerWidth <= 1024;
+    }
   }
 }
 </script>
@@ -57,7 +62,7 @@ export default {
     <details class="detail">
       <summary @mouseover="showCopyIcon = true" @mouseleave="showCopyIcon = false">
         {{ qna.question }}
-        <font-awesome-icon class="copy-icon" v-if="showCopyIcon" icon="chain" @click="copyToClipboard"/>
+        <font-awesome-icon class="copy-icon" v-if="showCopyIcon || mobile" icon="chain" @click="copyToClipboard"/>
       </summary>
       <div class="desc" v-html="qna.answer"></div>
     </details>
@@ -111,6 +116,8 @@ summary {
   font-size: 1.5rem;
   padding: 1rem;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .desc {
@@ -131,12 +138,9 @@ summary {
 }
 
 .copy-icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
+  margin-left: auto;
 }
 
 .copy-icon {
