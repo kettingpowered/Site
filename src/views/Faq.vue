@@ -45,19 +45,19 @@ export default {
         {
           id: "developers",
           question: "Who are the developers?",
-          answer: "Our developers are listed on the <a href='/team/'>team page</a>.",
+          answer: "Our developers are listed on the <a href='/team'>team page</a>.",
           safe: "Our developers are listed on the team page."
         },
         {
           id: "versions",
           question: "What versions of Minecraft does Ketting support?",
-          answer: "Check the <a href='/download/'>downloads page</a> for the latest supported versions.",
+          answer: "Check the <a href='/download'>downloads page</a> for the latest supported versions.",
           safe: "Check the downloads page for the latest supported versions."
         },
         {
           id: "how-to-install",
           question: "How do I install Ketting?",
-          answer: "When choosing a version from our <a href='/download/'>downloads page</a>, click 'Get it' and follow the provided instructions.",
+          answer: "When choosing a version from our <a href='/download'>downloads page</a>, click 'Get it' and follow the provided instructions.",
           safe: "When choosing a version from our downloads page, click 'Get it' and follow the provided instructions."
         },
         {
