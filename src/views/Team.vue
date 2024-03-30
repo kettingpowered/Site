@@ -24,7 +24,7 @@ export default {
         },
         {
           property: 'og:url',
-          content: this.global.url + 'team/'
+          content: this.global.url + 'team'
         },
         {
           name: 'theme-color',
@@ -33,7 +33,7 @@ export default {
       ],
       link: {
         rel: 'canonical',
-        href: this.global.url + 'team/'
+        href: this.global.url + 'team'
       }
     };
   },

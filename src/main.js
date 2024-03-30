@@ -29,23 +29,23 @@ export const createApp = ViteSSG(
                 component: () => import('@/views/Home.vue')
             },
             {
-                path: '/faq/',
+                path: '/faq',
                 name: 'FAQ',
                 component: () => import('@/views/Faq.vue')
             },
             {
-                path: '/team/',
+                path: '/team',
                 name: 'Team',
                 component: () => import('@/views/Team.vue')
             },
             {
-                path: '/download/',
+                path: '/download',
                 name: 'Download',
                 component: () => import('@/views/Download.vue')
             },
             //Explicitly generate page at 404. Otherwise, SSG doesn't generate a site for this.
             {
-                path: '/404/',
+                path: '/404',
                 name: 'NotFound',
                 component: () => import('@/views/NotFound.vue')
             },
