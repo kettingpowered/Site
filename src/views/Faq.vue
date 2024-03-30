@@ -1,6 +1,6 @@
 <script>
 import QnA from '@/components/faq/QnAComponent.vue';
-import questionsAndAnswers from '@/data/faq/questions.js';
+import {questionsAndAnswers} from '@/data/faq/questions.js';
 
 export default {
   name: "Faq",
