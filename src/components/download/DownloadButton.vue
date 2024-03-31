@@ -25,6 +25,10 @@ export default {
     latest: {
       type: Boolean,
       required: true
+    },
+    duplicate: {
+      type: Boolean,
+      required: true
     }
   },
   computed: {
@@ -41,7 +45,10 @@ export default {
 <template>
   <div id="button-container">
     <div id="button" :style="{ borderRadius: buttonBorderRadius }">
-      <p id="version">{{ kettingVersion }}</p>
+      <div id="version">
+        <p>{{ kettingVersion }}</p>
+        <p id="forge-version" v-if="duplicate">Forge {{ version.split('-')[1] }}</p>
+      </div>
       <span id="unsupported" v-if="isUnsupportedVersion">unsupported</span>
       <div id="right">
         <a id="compare" v-if="compareVersion != null" :href="global.softwareUrl() + 'compare/' + compareVersion + '...' + version" target="_blank" tabindex=0 >What's new?</a>
@@ -60,7 +67,7 @@ export default {
       <div>
         <div id="terminal">
           <p>cd <i>path/to/folder</i></p>
-          <p>java -jar kettinglauncher-X.X.X.jar -minecraftVersion {{ mcVersion + (latest ? '' : ' -kettingVersion ' + kettingVersion) }}</p>
+          <p>java -jar kettinglauncher-X.X.X.jar -minecraftVersion {{ mcVersion + (latest ? '' : ' -kettingVersion ' + kettingVersion) }}{{ !latest && duplicate ? ' -forgeVersion ' + version.split('-')[1] : '' }}</p>
         </div>
       </div>
     </div>
@@ -80,6 +87,12 @@ export default {
 #version {
   font-size: 1.5em;
   margin-left: 10px;
+}
+#forge-version {
+  font-size: .6em;
+  font-style: italic;
+  color: var(--color-text);
+  opacity: 0.7;
 }
 
 #unsupported {
@@ -176,6 +189,9 @@ export default {
   #version {
     margin: 0 auto;
     text-align: center;
+  }
+  #forge-version {
+    margin-bottom: 5px;
   }
 
   #unsupported {

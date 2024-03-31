@@ -41,6 +41,7 @@ export default {
   data() {
     return {
       releases: [],
+      duplicates: [],
       orderedReleases: new Map(),
       selectedRelease: null,
       loaded: false,
@@ -94,6 +95,22 @@ export default {
       });
       this.orderedReleases = versions;
       this.selectedRelease = this.releases[0].split('-')[0];
+      this.getDuplicates();
+    },
+    getDuplicates() {
+      const duplicates = [];
+      this.orderedReleases.forEach((versions) => {
+        const versionSet = new Set();
+        versions.forEach((version) => {
+          const mcVersion = version.split('-')[0];
+          const kettingVersion = version.split('-')[2];
+          if (versionSet.has(kettingVersion))
+            duplicates.push(mcVersion + "-" + kettingVersion);
+          else
+            versionSet.add(kettingVersion);
+        });
+      });
+      this.duplicates = duplicates;
     },
     getCompareVersion(versions, version) {
       const index = versions.indexOf(version);
@@ -115,6 +132,9 @@ export default {
     },
     setSelectedRelease(version) {
       this.selectedRelease = version;
+    },
+    isDuplicate(version) {
+      return this.duplicates.includes(this.selectedRelease + "-" + version.split('-')[2]);
     }
   },
   async created() {
@@ -156,6 +176,7 @@ export default {
             :compareVersion="getCompareVersion(versions, version)"
             :detailsActive="isDetailsActive(version)"
             :latest="isLatestVersion(versions, version)"
+            :duplicate="isDuplicate(version)"
             @toggle-details="toggleDetails(version)"
           />
         </div>
