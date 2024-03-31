@@ -69,6 +69,7 @@ export default {
           <p>cd <i>path/to/folder</i></p>
           <p>java -jar kettinglauncher-X.X.X.jar -minecraftVersion {{ mcVersion + (latest ? '' : ' -kettingVersion ' + kettingVersion) }}{{ !latest && duplicate ? ' -forgeVersion ' + version.split('-')[1] : '' }}</p>
         </div>
+        <p id="launch-arguments">For a more detailed guide on how to use launch arguments, check out our <a :href="global.githubUrl + '/kettinglauncher?tab=readme-ov-file#arguments'" target="_blank">readme</a>.</p>
       </div>
     </div>
   </div>
@@ -178,6 +179,12 @@ export default {
 }
 #terminal p:not(:last-child) {
   margin-bottom: 10px;
+}
+
+#launch-arguments {
+  font-style: italic;
+  font-size: 0.8em;
+  margin-left: 5px;
 }
 
 @media (max-width: 768px) {
