@@ -82,6 +82,7 @@ export const createApp = ViteSSG(
             url: "https://kettingpowered.org/",
             discordUrl: "https://discord.kettingpowered.org/",
             githubUrl: "https://github.com/kettingpowered/",
+            launcherUrl: "https://launcher.kettingpowered.org/",
             imageUrl: "https://github.com/kettingpowered.png",
             downloadUrl: "https://nexus.c0d3m4513r.com/custom/forge-ketting-versions.xml",
             softwareUrl: function() {

@@ -61,7 +61,7 @@ export default {
         <p>Unsupported versions may contain bugs or security vulnerabilities. Use at your own risk.</p>
       </div>
       <h2>How to install</h2>
-      <p>Step 1: Download <a :href="global.githubUrl + 'kettinglauncher/releases'" target="_blank">kettinglauncher</a>.</p>
+      <p>Step 1: Download <a :href="global.launcherUrl + 'releases'" target="_blank">kettinglauncher</a>.</p>
       <p>Step 2: Make a new folder and put the downloaded file in it.</p>
       <p>Step 3: Open a terminal of choice and execute the following command:</p>
       <div>
@@ -69,7 +69,7 @@ export default {
           <p>cd <i>path/to/folder</i></p>
           <p>java -jar kettinglauncher-X.X.X.jar -minecraftVersion {{ mcVersion + (latest ? '' : ' -kettingVersion ' + kettingVersion) }}{{ !latest && duplicate ? ' -forgeVersion ' + version.split('-')[1] : '' }}</p>
         </div>
-        <p id="launch-arguments">For a more detailed guide on how to use launch arguments, check out our <a :href="global.githubUrl + '/kettinglauncher?tab=readme-ov-file#arguments'" target="_blank">readme</a>.</p>
+        <p id="launch-arguments">For a more detailed guide on how to use launch arguments, check out our <a :href="global.launcherUrl + '?tab=readme-ov-file#arguments'" target="_blank">readme</a>.</p>
       </div>
     </div>
   </div>
