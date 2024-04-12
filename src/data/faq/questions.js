@@ -1,3 +1,4 @@
+
 const questionsAndAnswers = [
     {
         id: "what-is-ketting",
@@ -25,7 +26,7 @@ const questionsAndAnswers = [
     {
         id: "found-a-bug",
         question: "I found a bug, what do I do?",
-        answer: "Go to our <a href='https://github.com/kettingpowered'>github page</a> and create an issue in the correct repository."
+        answer: "Go to our <a href='${global.githubUrl}'>github page</a> and create an issue in the correct repository."
     },
     {
         id: "is-this-magma",
