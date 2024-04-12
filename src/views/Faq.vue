@@ -56,9 +56,14 @@ export default {
       if (id) {
         const qna = this.getQuestionById(id);
         if (qna)
-          return qna.safe || qna.answer;
+          return this.replacePlaceholders(qna.safe || qna.answer);
       }
       return 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches';
+    },
+    replacePlaceholders(str) {
+      let newStr = str;
+      newStr = newStr.replace('%GITHUB_URL%', this.global.githubUrl);
+      return newStr;
     },
     getQuestionById(id) {
       return this.questionsAndAnswers.find(q => q.id === id);
@@ -89,7 +94,7 @@ export default {
   <div id="content">
     <h1>FAQ</h1>
     <div class="questions">
-      <QnA class="question" v-for="qna in questionsAndAnswers" :id="qna.id" :key="qna.id" :qna="qna" :border="getBorder(qna)" :expanded="expanded(qna.id)" />
+      <QnA class="question" v-for="qna in questionsAndAnswers" :id="qna.id" :key="qna.id" :qna="qna" :desc="replacePlaceholders(qna.answer)" :border="getBorder(qna)" :expanded="expanded(qna.id)" />
     </div>
   </div>
 </template>

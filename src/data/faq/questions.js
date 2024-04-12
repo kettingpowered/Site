@@ -25,7 +25,8 @@ const questionsAndAnswers = [
     {
         id: "found-a-bug",
         question: "I found a bug, what do I do?",
-        answer: "Go to our github page and create an issue in the correct repository."
+        answer: "Go to our <a href='%GITHUB_URL%' target='_blank'>GitHub page</a> and create an issue in the correct repository.",
+        safe: "Go to our [GitHub page](%GITHUB_URL%) and create an issue in the correct repository."
     },
     {
         id: "is-this-magma",

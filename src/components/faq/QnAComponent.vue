@@ -13,6 +13,10 @@ export default {
       type: Object,
       required: true,
     },
+    desc: {
+      type: String,
+      required: true
+    },
     border: {
       type: String,
       required: true,
@@ -67,7 +71,7 @@ export default {
         {{ qna.question }}
         <font-awesome-icon class="copy-icon" v-if="showIcon" icon="chain" @click="copyToClipboard"/>
       </summary>
-      <div class="desc" v-html="qna.answer"></div>
+      <div class="desc" v-html="desc"></div>
     </details>
     <div v-if="copyNotification" class="notification-banner">
       Link copied to clipboard!
