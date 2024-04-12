@@ -1,4 +1,3 @@
-
 const questionsAndAnswers = [
     {
         id: "what-is-ketting",
