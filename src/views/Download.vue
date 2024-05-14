@@ -29,10 +29,17 @@ export default {
           content: '#770708'
         },
       ],
-      link: {
-        rel: 'canonical',
-        href: this.global.url + 'download'
-      }
+      link: [
+        {
+          rel: 'canonical',
+          href: this.global.url + 'download'
+        },
+        {
+          rel: 'prefetch',
+          href: this.global.downloadUrl,
+          as: 'fetch'
+        }
+      ]
     };
   },
   components: {
