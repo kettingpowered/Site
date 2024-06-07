@@ -84,7 +84,7 @@ export const createApp = ViteSSG(
             githubUrl: "https://github.com/kettingpowered/",
             launcherUrl: "https://launcher.kettingpowered.org/",
             imageUrl: "https://github.com/kettingpowered.png",
-            downloadUrl: "https://nexus.c0d3m4513r.com/custom/forge-ketting-versions.xml",
+            downloadUrl: "https://reposilite.c0d3m4513r.com/Ketting-Server-Releases/org/kettingpowered/server/forge/maven-metadata.xml",
             softwareUrl: function() {
                 return this.githubUrl + "Ketting-1-20-x/";
             },
