@@ -47,7 +47,7 @@ export default {
         <p id="forge-version" v-if="duplicate">Forge {{ version.split('-')[1] }}</p>
       </div>
       <div id="right">
-        <a id="compare" v-if="compareVersion != null" :href="global.softwareUrl() + 'compare/' + compareVersion + '...' + version" target="_blank" tabindex=0 >What's new?</a>
+        <a id="compare" v-if="compareVersion != null" :href="global.softwareUrl(mcVersion) + 'compare/' + compareVersion + '...' + version" target="_blank" tabindex=0 >What's new?</a>
         <p id="get" @click="this.$emit('toggle-details')" tabindex=0 role="note" aria-label="Get it">Get it</p>
       </div>
     </div>

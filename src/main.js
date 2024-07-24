@@ -85,8 +85,14 @@ export const createApp = ViteSSG(
             launcherUrl: "https://launcher.kettingpowered.org/",
             imageUrl: "https://github.com/kettingpowered.png",
             downloadUrl: "https://reposilite.c0d3m4513r.com/Ketting-Server-Releases/org/kettingpowered/server/forge/maven-metadata.xml",
-            softwareUrl: function() {
-                return this.githubUrl + "Ketting-1-20-x/";
+            softwareUrl: function(version) {
+                if (version.startsWith("1.20")) {
+                    return this.githubUrl + "Ketting-1-20-x/";
+                } else if (version.startsWith("1.21")) {
+                    return this.githubUrl + "Ketting-1-21-x/";
+                } else {
+                    return this.githubUrl + "Ketting-1-20-x/";
+                }
             },
             deprecatedVersions: ["1.20.2", "1.20.3", "1.20.4"],
         };
