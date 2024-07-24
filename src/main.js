@@ -88,7 +88,7 @@ export const createApp = ViteSSG(
             softwareUrl: function() {
                 return this.githubUrl + "Ketting-1-20-x/";
             },
-            unsupportedVersions: ["1.20.3"]
+            deprecatedVersions: ["1.20.2", "1.20.3", "1.20.4"],
         };
     }
 )

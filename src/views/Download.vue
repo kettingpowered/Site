@@ -142,6 +142,9 @@ export default {
     },
     isDuplicate(version) {
       return this.duplicates.includes(this.selectedRelease + "-" + version.split('-')[2]);
+    },
+    isDeprecated(version) {
+      return this.global.deprecatedVersions.includes(version);
     }
   },
   async created() {
@@ -172,6 +175,10 @@ export default {
         <div class="switch">
           <div class="option" v-for="version in orderedReleases.keys()" :key="version" :class="{ 'selected': selectedRelease === version }" @click="setSelectedRelease(version)" :aria-label="'Minecraft-Version '+version" tabindex=0>{{ version }}</div>
           <div class="background" :style="{ left: buttonBgPos, width: buttonBgWidth }"></div>
+        </div>
+        <div class="deprecationNotice" v-if="isDeprecated(mcVersion)">
+          <h2>This version is deprecated</h2>
+          <p>{{ mcVersion }} will no longer get any updates. We recommend you to update to a newer version.</p>
         </div>
         <div class="version-buttons">
           <DownloadButton
@@ -223,6 +230,18 @@ export default {
   background-color: var(--color-background-mute);
   border-radius: 14px;
   border: 2px solid var(--color-background-mute);
+}
+
+.deprecationNotice {
+  background-color: orange;
+  border-radius: 12px;
+  padding: 5px;
+  margin: 10px 0;
+  text-align: center;
+}
+.deprecationNotice * {
+  color: var(--light-color-heading);
+  font-weight: bold;
 }
 
 .option {

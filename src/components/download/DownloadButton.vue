@@ -34,9 +34,6 @@ export default {
   computed: {
     buttonBorderRadius() {
       return this.detailsActive ? "15px 15px 0 0" : "15px";
-    },
-    isUnsupportedVersion() {
-      return this.global.unsupportedVersions.includes(this.mcVersion);
     }
   }
 }
@@ -49,17 +46,12 @@ export default {
         <p>{{ kettingVersion }}</p>
         <p id="forge-version" v-if="duplicate">Forge {{ version.split('-')[1] }}</p>
       </div>
-      <span id="unsupported" v-if="isUnsupportedVersion">unsupported</span>
       <div id="right">
         <a id="compare" v-if="compareVersion != null" :href="global.softwareUrl() + 'compare/' + compareVersion + '...' + version" target="_blank" tabindex=0 >What's new?</a>
         <p id="get" @click="this.$emit('toggle-details')" tabindex=0 role="note" aria-label="Get it">Get it</p>
       </div>
     </div>
     <div id="details" v-if="detailsActive">
-      <div id="unsupported-details" v-if="isUnsupportedVersion">
-        <h3>Note: This version is unsupported</h3>
-        <p>Unsupported versions may contain bugs or security vulnerabilities. Use at your own risk.</p>
-      </div>
       <h2>How to install</h2>
       <p>Step 1: Download <a :href="global.launcherUrl + 'releases'" target="_blank">kettinglauncher</a>.</p>
       <p>Step 2: Make a new folder and put the downloaded file in it.</p>
@@ -94,17 +86,6 @@ export default {
   font-style: italic;
   color: var(--color-text);
   opacity: 0.7;
-}
-
-#unsupported {
-  margin-left: 15px;
-  padding: 2px 5px;
-  border-radius: 15px;
-  border: 2px solid white;
-  background: darkred;
-  color: white;
-  font: small-caps bold 0.8em monospace;
-  letter-spacing: 1px;
 }
 
 #right {
@@ -160,14 +141,6 @@ export default {
   color: var(--color-link-secondary-hover);
 }
 
-#unsupported-details {
-  text-align: center;
-  background-color: darkred;
-  color: white;
-  border-radius: 15px;
-  margin: 10px 0 25px 0;
-}
-
 #terminal {
   display: inline-block;
   background-color: #111;
@@ -199,11 +172,6 @@ export default {
   }
   #forge-version {
     margin-bottom: 5px;
-  }
-
-  #unsupported {
-    margin: 5px auto;
-    max-width: 100px;
   }
 
   #right {
