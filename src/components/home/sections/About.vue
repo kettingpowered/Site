@@ -39,7 +39,7 @@ export default {
 
 <style scoped>
 #magma {
-  color: darkorange;
+  color: #ffb300;
 }
 #magma:hover {
   text-decoration: underline;
