@@ -17,12 +17,12 @@ export default {
         /*OpenGraph description. Mostly for Social Platforms*/
         {
           property: 'og:description',
-          content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
+          content: 'Ketting, Forge with Bukkit & Spigot support'
         },
         /*Description for Search Enginges*/
         {
           name: 'description',
-          content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
+          content: 'Ketting, Forge with Bukkit & Spigot support'
         },
         {
           property: 'og:image',

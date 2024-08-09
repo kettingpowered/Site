@@ -9,7 +9,7 @@ export default {
     <div class="content">
       <div id="info">
         <h1>Ketting</h1>
-        <h3>A fork of MinecraftForge with added Bukkit & Spigot patches</h3>
+        <h2>Forge with Bukkit & Spigot support</h2>
 
         <div class="button-group">
           <router-link :to="{ name: 'Download' }" class="button primary">Downloads</router-link>
@@ -18,7 +18,7 @@ export default {
       </div>
 
       <div id="terminal-container">
-        <img src="@/assets/ketting-startup.png" height="300" width="493.75" alt="Terminal" id="terminal" >
+        <img src="@/assets/ketting-startup.png" height="300" width="493" alt="Terminal" id="terminal" >
       </div>
     </div>
   </section>
