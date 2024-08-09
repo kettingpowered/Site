@@ -17,7 +17,6 @@
     "@fortawesome/vue-fontawesome": "^3.0.6",
     "@unhead/vue": "^1.9.3",
     "fast-xml-parser": "^4.3.6",
-    "jquery": "^3.7.1",
     "unhead": "^1.9.3",
     "vue": "^3.4.21"
   },

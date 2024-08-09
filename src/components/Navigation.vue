@@ -27,12 +27,11 @@
 </template>
 
 <script>
-import $ from 'jquery';
 import Logo from './Logo.vue';
 
-const menuOpen = ".nav-menu .mobile-button-group #mobile-button:nth-child(1)";
-const menuClosed = ".nav-menu .mobile-button-group #mobile-button:nth-child(2)";
-const menuContent = ".nav-menu .nav-content";
+const menuOpenEle = () => document.querySelector(".nav-menu").querySelector(".mobile-button-group").querySelector("#mobile-button:nth-child(1)");
+const menuClosedEle = () => document.querySelector(".nav-menu").querySelector(".mobile-button-group").querySelector("#mobile-button:nth-child(2)");
+const menuContentEle = () => document.querySelector(".nav-menu").querySelector(".nav-content");
 
 export default {
   data() {
@@ -43,19 +42,20 @@ export default {
   methods: {
     showMenu() {
       this.showMobileMenu = true;
-      $(menuOpen).addClass("hidden");
-      $(menuClosed).removeClass("hidden");
-      const menuContentObj = $(menuContent);
-      menuContentObj.removeClass("closed-menu");
-      menuContentObj.addClass("open-menu");
+      menuOpenEle().classList.add("hidden");
+      menuClosedEle().classList.remove("hidden");
+      const menuContentObj = menuContentEle();
+      menuContentObj.classList.remove("closed-menu");
+      menuContentObj.classList.add("open-menu");
+
     },
     closeMenu() {
       this.showMobileMenu = false;
-      $(menuOpen).removeClass("hidden");
-      $(menuClosed).addClass("hidden");
-      const menuContentObj = $(menuContent);
-      menuContentObj.addClass("closed-menu");
-      menuContentObj.removeClass("open-menu");
+      menuOpenEle().classList.remove("hidden");
+      menuClosedEle().classList.add("hidden");
+      const menuContentObj = menuContentEle();
+      menuContentObj.classList.add("closed-menu");
+      menuContentObj.classList.remove("open-menu");
     },
   },
   components: {
