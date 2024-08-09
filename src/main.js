@@ -5,7 +5,7 @@ import { VueHeadMixin } from '@unhead/vue'
 import App from './App.vue'
 
 /* import the fontawesome core */
-import { library, config} from '@fortawesome/fontawesome-svg-core'
+import { config } from '@fortawesome/fontawesome-svg-core'
 config.autoAddCss = false; //This causes a CSP error
 import "@fortawesome/fontawesome-svg-core/styles.css"; //we include it instead directly here.
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'

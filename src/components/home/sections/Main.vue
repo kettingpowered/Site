@@ -18,7 +18,7 @@ export default {
       </div>
 
       <div id="terminal-container">
-        <img src="@/assets/ketting-startup.png" alt="Terminal" id="terminal" >
+        <img src="@/assets/ketting-startup.png" height="300" width="493.75" alt="Terminal" id="terminal" >
       </div>
     </div>
   </section>
@@ -65,8 +65,6 @@ export default {
   align-items: center;
 }
 #terminal {
-  width: auto;
-  height: 300px;
   border-radius: 10px;
   box-shadow: 0 0 15px black;
   margin: 20px;
