@@ -1,3 +1,8 @@
+<script setup>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faGithub, faTwitter, faTwitch, faYoutube } from "@fortawesome/free-brands-svg-icons";
+</script>
+
 <script>
 export default {
   name: "Member",
@@ -40,18 +45,18 @@ export default {
   methods: {
     determineSocialIconFromUrl(url) {
       if (url.includes('github.com'))
-        return ['fab', 'github'];
+        return faGithub;
 
       if (url.includes('twitter.com') || url.includes('x.com'))
-        return ['fab', 'twitter'];
+        return faTwitter;
 
       //twitch
       if (url.includes('twitch.tv'))
-        return ['fab', 'twitch'];
+        return faTwitch;
 
       //youtube
       if (url.includes('youtube.com'))
-        return ['fab', 'youtube'];
+        return faYoutube;
     },
     getLabelFromUrl(url) {
       if (url.includes('github.com'))
@@ -81,7 +86,7 @@ export default {
       <div class="info">
         <h2>{{ name }}</h2>
         <div v-for="aName in alternateNames" class="alternate-names" v-if="alternateNames">
-          <font-awesome-icon :icon="aName.icon" />
+          <font-awesome-icon :icon="aName.icon"></font-awesome-icon>
           <span>{{ aName.name }}</span>
         </div>
       </div>
@@ -100,7 +105,7 @@ export default {
     </details>
     <div class="socials">
       <a v-for="social in socials" :href="social" target="_blank" :aria-label="getLabelFromUrl(social)">
-        <font-awesome-icon :icon="determineSocialIconFromUrl(social)" />
+        <font-awesome-icon :icon="determineSocialIconFromUrl(social)"></font-awesome-icon>
       </a>
     </div>
   </div>

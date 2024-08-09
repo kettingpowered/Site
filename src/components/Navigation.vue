@@ -1,3 +1,7 @@
+<script setup>
+import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
+</script>
+
 <template>
   <div class="nav-menu">
     <div class="mobile-button-group">
@@ -16,10 +20,10 @@
       <div class="flex-grow-all"></div>
       <div class="navbar-icons" aria-label="Other Useful Links">
         <a class="navbar-icon" :href="global.discordUrl" target="_blank" aria-label="Discord Link">
-          <font-awesome-icon :icon="['fab', 'discord']" />
+          <font-awesome-icon :icon="faDiscord" />
         </a>
         <a class="navbar-icon" :href="global.githubUrl" target="_blank" aria-label="Github Link">
-          <font-awesome-icon :icon="['fab', 'github']" />
+          <font-awesome-icon :icon="faGithub" />
         </a>
       </div>
     </div>

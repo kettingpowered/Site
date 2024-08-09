@@ -1,3 +1,6 @@
+<script setup>
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+</script>
 <script>
 export default {
   name: "QnAComponent",
@@ -69,7 +72,7 @@ export default {
     <details class="detail">
       <summary @mouseover="showCopyIcon = true" @mouseleave="showCopyIcon = false">
         {{ qna.question }}
-        <font-awesome-icon class="copy-icon" v-if="showIcon" icon="chain" @click="copyToClipboard"/>
+        <font-awesome-icon class="copy-icon" v-if="showIcon" :icon="faLink" @click="copyToClipboard"/>
       </summary>
       <div class="desc" v-html="desc"></div>
     </details>

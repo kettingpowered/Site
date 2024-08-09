@@ -1,8 +1,11 @@
 <script setup>
+import { faSpinner, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+
+
 defineProps({
   title: [String, Number],
   description: String,
-  icon: Array[String],
+  icon: Object,
   loading: Boolean,
   error: Boolean
 });
@@ -11,11 +14,11 @@ defineProps({
 <template>
   <div class="stat">
     <div v-if="loading" class="loading-spinner">
-      <font-awesome-icon icon="spinner" pulse size="3x" />
+      <font-awesome-icon :icon="faSpinner" pulse size="3x" />
     </div>
     <div v-else>
       <div class="error-icon" v-if="error">
-        <font-awesome-icon icon="exclamation-circle" size="lg" />
+        <font-awesome-icon :icon="faCircleExclamation" size="lg" />
       </div>
       <font-awesome-icon :icon="icon" size="3x"/>
       <p id="title">{{ title }}</p>

@@ -1,3 +1,8 @@
+<script setup>
+import { faServer, faUsers} from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+</script>
 <script>
 import Stat from "@/components/Statistic.vue";
 
@@ -80,9 +85,9 @@ export default {
       <div id="info">
         <h1>Stats</h1>
         <div id="stat-container">
-          <Stat :title="`${openIssues} / ${closedIssues}`" description="Open / Closed issues" :loading="loadingIssues" :error="loadingIssuesError" :icon="['fab', 'github']"/>
-          <Stat :title="servers" description="Servers" :loading="loadingBstats" :error="loadingBstatsError" :icon="['fas', 'server']"/>
-          <Stat :title="players" description="Players" :loading="loadingBstats" :error="loadingBstatsError" :icon="['fas', 'users']"/>
+          <Stat :title="`${openIssues} / ${closedIssues}`" description="Open / Closed issues" :loading="loadingIssues" :error="loadingIssuesError" :icon="faGithub"/>
+          <Stat :title="servers" description="Servers" :loading="loadingBstats" :error="loadingBstatsError" :icon="faServer"/>
+          <Stat :title="players" description="Players" :loading="loadingBstats" :error="loadingBstatsError" :icon="faUsers"/>
         </div>
       </div>
     </div>

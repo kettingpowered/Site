@@ -8,14 +8,8 @@ import App from './App.vue'
 import { library, config} from '@fortawesome/fontawesome-svg-core'
 config.autoAddCss = false; //This causes a CSP error
 import "@fortawesome/fontawesome-svg-core/styles.css"; //we include it instead directly here.
-
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-/* ICONS HERE */
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-library.add(fas, far, fab);
 
 export const createApp = ViteSSG(
     // the root component
@@ -75,8 +69,8 @@ export const createApp = ViteSSG(
 
         app.mixin(VueHeadMixin);
         //unhead setup end
+        app.component("font-awesome-icon", FontAwesomeIcon);
 
-        app.component('font-awesome-icon', FontAwesomeIcon)
         //Create some global properties
         app.config.globalProperties.global = {
             url: "https://kettingpowered.org/",
