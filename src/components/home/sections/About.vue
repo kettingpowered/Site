@@ -39,10 +39,19 @@ export default {
 
 <style scoped>
 #magma {
-  color: #ffb300;
+  color: #970000;
 }
 #magma:hover {
-  color: #ffcb00;
+  color: #ab0000;
+}
+
+@media (prefers-color-scheme: dark) {
+  #magma {
+    color: #ffb300;
+  }
+  #magma:hover {
+    color: #ffcb00;
+  }
 }
 
 #team {

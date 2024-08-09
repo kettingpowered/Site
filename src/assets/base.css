@@ -15,7 +15,8 @@
   --light-color-secondary-dark: #808080;
   --light-color-secondary-light: #d3d3d3;
 
-  --light-color-link: #CCCCCC;
+  --light-color-link: #DDDDDD;
+  --light-color-link-opposite: #515151;
   --light-color-link-hover: #AAAAAA;
   --light-color-link-secondary: #000000;
   --light-color-link-secondary-hover: #333333;
@@ -39,6 +40,7 @@
   --dark-color-secondary-light: #d3d3d3;
 
   --dark-color-link: #CCCCCC;
+  --dark-color-link-opposite: #515151;
   --dark-color-link-hover: #AAAAAA;
   --dark-color-link-secondary: #FFFFFF;
   --dark-color-link-secondary-hover: #DDDDDD;
@@ -63,6 +65,7 @@
   --color-secondary-light: var(--light-color-secondary-light);
 
   --color-link: var(--light-color-link);
+  --color-link-opposite: var(--light-color-link-opposite);
   --color-link-hover: var(--light-color-link-hover);
   --color-link-secondary: var(--light-color-link-secondary);
   --color-link-secondary-hover: var(--light-color-link-secondary-hover);
@@ -88,6 +91,7 @@
     --color-secondary-light: var(--dark-color-secondary-light);
 
     --color-link: var(--dark-color-link);
+    --color-link-opposite: var(--dark-color-link);
     --color-link-hover: var(--dark-color-link-hover);
     --color-link-secondary: var(--dark-color-link-secondary);
     --color-link-secondary-hover: var(--dark-color-link-secondary-hover);

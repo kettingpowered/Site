@@ -13,7 +13,7 @@ export default {
 
         <div class="button-group">
           <router-link :to="{ name: 'Download' }" class="button primary">Downloads</router-link>
-          <router-link :to="{ name: 'FAQ' }" class="button">FAQ</router-link>
+          <router-link :to="{ name: 'FAQ' }" class="button" id="faq">FAQ</router-link>
         </div>
       </div>
 
@@ -30,7 +30,9 @@ export default {
   min-height: 60vh;
   align-content: center;
 }
-
+#faq {
+  color: var(--color-link-opposite);
+}
 #info {
   justify-content: center;
   width: 75%;
