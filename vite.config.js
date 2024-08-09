@@ -33,6 +33,8 @@ export default defineConfig({
     }
   },
   ssgOptions: {
+    script: "async",
+    formatting: "minify",
     dirStyle: "nested",
     /*include the dynamic FAQ routes*/
     includedRoutes(paths, routes) {
