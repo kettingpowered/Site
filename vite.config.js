@@ -37,6 +37,7 @@ export default defineConfig({
       path: "./dist",
       pruneSource: true,
       fonts: true,
+      allowRules: ['.content'],
     },
     formatting: "minify",
     dirStyle: "nested",
