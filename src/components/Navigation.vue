@@ -1,12 +1,13 @@
 <script setup>
+import { faBars, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 </script>
 
 <template>
   <div class="nav-menu">
     <div class="mobile-button-group">
-      <font-awesome-icon :icon="'bars'" id="mobile-button" @click="showMenu" />
-      <font-awesome-icon :icon="'bars-staggered'" id="mobile-button" class="hidden" @click="closeMenu" />
+      <font-awesome-icon :icon="faBars" id="mobile-button" @click="showMenu" />
+      <font-awesome-icon :icon="faBarsStaggered" id="mobile-button" class="hidden" @click="closeMenu" />
       <Logo id="logo-mobile" />
     </div>
     <div class="nav-content closed-menu">
