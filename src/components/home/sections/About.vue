@@ -42,7 +42,6 @@ export default {
   color: #ffb300;
 }
 #magma:hover {
-  text-decoration: underline;
   color: #ffcb00;
 }
 
@@ -50,8 +49,11 @@ export default {
   color: var(--color-link-secondary)
 }
 #team:hover {
-  text-decoration: underline;
   color: var(--color-link-secondary-hover)
+}
+
+#magma, #team {
+  text-decoration: underline;
 }
 
 strong {
