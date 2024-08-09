@@ -14,8 +14,14 @@ export default {
           property: 'og:title',
           content: this.unhead.formattedTitle("Meet the Team"),
         },
+        /*OpenGraph description. Mostly for Social Platforms*/
         {
           property: 'og:description',
+          content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
+        },
+        /*Description for Search Enginges*/
+        {
+          name: 'description',
           content: 'Ketting, A fork of MinecraftForge with added Bukkit & Spigot patches'
         },
         {

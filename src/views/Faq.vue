@@ -12,8 +12,15 @@ export default {
           property: 'og:title',
           content: this.ogTitle
         },
+
+        /*OpenGraph description. Mostly for Social Platforms*/
         {
           property: 'og:description',
+          content: this.ogDescription
+        },
+        /*Description for Search Enginges*/
+        {
+          name: 'description',
           content: this.ogDescription
         },
         {
