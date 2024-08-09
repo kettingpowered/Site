@@ -34,6 +34,7 @@ export default defineConfig({
   },
   ssgOptions: {
     script: 'async',
+    mock: true,
     crittersOptions : {
       path: "./dist",
       pruneSource: true,

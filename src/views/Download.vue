@@ -1,6 +1,5 @@
 <script>
 import DownloadButton from "@/components/download/DownloadButton.vue";
-import {XMLParser} from "fast-xml-parser";
 
 export default {
   name: "Download",
@@ -74,10 +73,14 @@ export default {
       this.loaded = true;
     },
     parseXML(xml) {
-      const parser = new XMLParser();
-      const doc = parser.parse(xml);
+      const parser = new DOMParser();;
+      const doc = parser.parseFromString(xml, 'text/xml');
+      doc.getElementsByTagName("metadata")[0]
+         .getElementsByTagName("versioning")[0]
+         .getElementsByTagName("versions")[0]
+         .querySelectorAll("version")
+         .forEach(v=>this.releases.push(v.textContent));
       // noinspection JSUnresolvedReference
-      this.releases = doc.metadata.versioning.versions.version;
       this.sortReleases();
     },
     sortReleases() {
