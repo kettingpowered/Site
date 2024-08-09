@@ -33,6 +33,7 @@ export default defineConfig({
     }
   },
   ssgOptions: {
+    script: 'async',
     crittersOptions : {
       path: "./dist",
       pruneSource: true,
