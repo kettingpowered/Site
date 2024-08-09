@@ -18,7 +18,10 @@ export default {
       </div>
 
       <div id="terminal-container">
-        <img src="@/assets/ketting-startup.png" height="300" width="493" alt="Terminal" id="terminal" >
+        <picture>
+          <source media="(max-width: 1000px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+          <img src="@/assets/ketting-startup.png" height="300" width="493" alt="Terminal" id="terminal" />
+        </picture>
       </div>
     </div>
   </section>
