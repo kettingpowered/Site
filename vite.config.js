@@ -33,7 +33,11 @@ export default defineConfig({
     }
   },
   ssgOptions: {
-    script: "async",
+    crittersOptions : {
+      path: "./dist",
+      pruneSource: true,
+      fonts: true,
+    },
     formatting: "minify",
     dirStyle: "nested",
     /*include the dynamic FAQ routes*/
