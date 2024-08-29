@@ -23,6 +23,12 @@ const questionsAndAnswers = [
         safe: "When choosing a version from our downloads page, click 'Get it' and follow the provided instructions."
     },
     {
+        id: "how-to-install-on-feather",
+        question: "How do I install Ketting on Feather Client?",
+        answer: "You can follow our provided <a href='%FEATHER_INSTALL_URL%' target='_blank'>YouTube tutorial</a>.",
+        safe: "You can follow our provided YouTube tutorial. (%FEATHER_INSTALL_URL%)"
+    },
+    {
         id: "found-a-bug",
         question: "I found a bug, what do I do?",
         answer: "Go to our <a href='%GITHUB_URL%' target='_blank'>GitHub page</a> and create an issue in the correct repository.",

@@ -18,7 +18,7 @@ export default {
           property: 'og:description',
           content: this.ogDescription
         },
-        /*Description for Search Enginges*/
+        /*Description for Search Engines*/
         {
           name: 'description',
           content: this.ogDescription
@@ -70,6 +70,7 @@ export default {
     replacePlaceholders(str) {
       let newStr = str;
       newStr = newStr.replace('%GITHUB_URL%', this.global.githubUrl);
+      newStr = newStr.replace('%FEATHER_INSTALL_URL%', this.global.featherInstallUrl);
       return newStr;
     },
     getQuestionById(id) {
