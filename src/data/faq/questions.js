@@ -25,8 +25,8 @@ const questionsAndAnswers = [
     {
         id: "how-to-install-on-feather",
         question: "How do I install Ketting on Feather Client?",
-        answer: "You can follow our provided <a href='%FEATHER_INSTALL_URL%' target='_blank'>YouTube tutorial</a>.",
-        safe: "You can follow our provided YouTube tutorial. (%FEATHER_INSTALL_URL%)"
+        answer: "You can follow our provided <a href='%FEATHER_INSTALL_URL%' target='_blank'>YouTube tutorial</a>.<br>You basically only need to add <pre>-javaagent:server.jar</pre> in the Launch Args field.",
+        safe: "You can follow our provided YouTube tutorial. (%FEATHER_INSTALL_URL%)\n You basically only need to add `-javaagent:server.jar´ in the Launch Args field."
     },
     {
         id: "found-a-bug",
