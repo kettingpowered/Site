@@ -4,7 +4,7 @@ import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 </script>
 
 <template>
-  <div class="nav-menu">
+  <header class="nav-menu">
     <div class="mobile-button-group">
       <font-awesome-icon :icon="faBars" id="mobile-button" @click="showMenu" />
       <font-awesome-icon :icon="faBarsStaggered" id="mobile-button" class="hidden" @click="closeMenu" />
@@ -12,12 +12,12 @@ import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
     </div>
     <div class="nav-content closed-menu">
       <Logo id="logo" />
-      <menu class="nav-items" aria-label="Navigation Menu">
+      <nav class="nav-items" aria-label="Navigation Menu">
         <router-link class="nav-item" @click="closeMenu" to="/">Home</router-link>
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'FAQ' }">FAQ</router-link>
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Team' }">Team</router-link>
         <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Download' }">Download</router-link>
-      </menu>
+      </nav>
       <div class="flex-grow-all"></div>
       <div class="navbar-icons" aria-label="Other Useful Links">
         <a class="navbar-icon" :href="global.discordUrl" target="_blank" aria-label="Discord Link">
@@ -28,7 +28,7 @@ import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
         </a>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
