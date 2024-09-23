@@ -6,11 +6,11 @@ import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 <template>
   <header class="nav-menu">
     <div class="mobile-button-group">
-      <font-awesome-icon :icon="faBars" id="mobile-button" @click="showMenu" />
-      <font-awesome-icon :icon="faBarsStaggered" id="mobile-button" class="hidden" @click="closeMenu" />
+      <font-awesome-icon :icon="faBars" :class="{hidden: showMobileMenu}" id="mobile-button" @click="showMobileMenu = true" />
+      <font-awesome-icon :icon="faBarsStaggered" :class="{hidden: !showMobileMenu}" id="mobile-button" @click="showMobileMenu = false" />
       <Logo id="logo-mobile" />
     </div>
-    <div class="nav-content closed-menu">
+    <div class="nav-content" :class="{closedMenu: !showMobileMenu, openMenu: showMobileMenu}">
       <Logo id="logo" />
       <nav class="nav-items" aria-label="Navigation Menu">
         <router-link class="nav-item" @click="closeMenu" to="/">Home</router-link>
@@ -34,34 +34,11 @@ import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 <script>
 import Logo from './Logo.vue';
 
-const menuOpenEle = () => document.querySelector(".nav-menu").querySelector(".mobile-button-group").querySelector("#mobile-button:nth-child(1)");
-const menuClosedEle = () => document.querySelector(".nav-menu").querySelector(".mobile-button-group").querySelector("#mobile-button:nth-child(2)");
-const menuContentEle = () => document.querySelector(".nav-menu").querySelector(".nav-content");
-
 export default {
   data() {
     return {
       showMobileMenu: false,
     };
-  },
-  methods: {
-    showMenu() {
-      this.showMobileMenu = true;
-      menuOpenEle().classList.add("hidden");
-      menuClosedEle().classList.remove("hidden");
-      const menuContentObj = menuContentEle();
-      menuContentObj.classList.remove("closed-menu");
-      menuContentObj.classList.add("open-menu");
-
-    },
-    closeMenu() {
-      this.showMobileMenu = false;
-      menuOpenEle().classList.remove("hidden");
-      menuClosedEle().classList.add("hidden");
-      const menuContentObj = menuContentEle();
-      menuContentObj.classList.add("closed-menu");
-      menuContentObj.classList.remove("open-menu");
-    },
   },
   components: {
     Logo,
@@ -120,12 +97,12 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .open-menu {
+  .openMenu {
     opacity: 1;
     pointer-events: auto;
   }
 
-  .closed-menu {
+  .closedMenu {
     opacity: 0;
     height: 0;
     padding: 0;
