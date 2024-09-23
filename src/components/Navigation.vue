@@ -13,10 +13,10 @@ import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
     <div class="nav-content" :class="{closedMenu: !showMobileMenu, openMenu: showMobileMenu}">
       <Logo id="logo" />
       <nav class="nav-items" aria-label="Navigation Menu">
-        <router-link class="nav-item" @click="closeMenu" to="/">Home</router-link>
-        <router-link class="nav-item" @click="closeMenu" :to="{ name: 'FAQ' }">FAQ</router-link>
-        <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Team' }">Team</router-link>
-        <router-link class="nav-item" @click="closeMenu" :to="{ name: 'Download' }">Download</router-link>
+        <router-link class="nav-item" @click="showMobileMenu = false" to="/">Home</router-link>
+        <router-link class="nav-item" @click="showMobileMenu = false" :to="{ name: 'FAQ' }">FAQ</router-link>
+        <router-link class="nav-item" @click="showMobileMenu = false" :to="{ name: 'Team' }">Team</router-link>
+        <router-link class="nav-item" @click="showMobileMenu = false" :to="{ name: 'Download' }">Download</router-link>
       </nav>
       <div class="flex-grow-all"></div>
       <div class="navbar-icons" aria-label="Other Useful Links">
