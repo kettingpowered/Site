@@ -56,6 +56,7 @@ export default defineConfig({
       generateSitemap({
         hostname: "https://kettingpowered.org/",
         exclude: ["/404"],
+        generateRobotsTxt: false,
       })
     },
   }
