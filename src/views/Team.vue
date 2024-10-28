@@ -72,7 +72,7 @@ export default {
           image="https://github.com/C0D3-M4513R.png?size=256"
           :roles="['Admin', 'Contributor']"
           :description="['Creator of KettingLauncher', 'Hosts Ketting Releases', 'Hosts Ketting\'s Website']"
-          :socials="['https://github.com/C0D3-M4513R','https://twitter.com/C0D3M4513R', 'https://www.twitch.tv/c0d3_m4513r', 'https://www.youtube.com/channel/UC30moJmnYyVmD2RkhRjOxpw']"
+          :socials="['https://github.com/C0D3-M4513R', 'https://www.twitch.tv/c0d3_m4513r', 'https://www.youtube.com/channel/UC30moJmnYyVmD2RkhRjOxpw']"
       />
       <Member
           name="TonimatasDEV"
