@@ -53,7 +53,7 @@ export default {
     </div>
     <div id="details" v-if="detailsActive">
       <h2>How to install</h2>
-      <p>Step 1: Download <a :href="global.launcherUrl + 'releases'" target="_blank">kettinglauncher</a>.</p>
+      <p>Step 1: Download <a :href="global.launcherUrl + 'releases/latest'" target="_blank">kettinglauncher</a>.</p>
       <p>Step 2: Make a new folder and put the downloaded file in it.</p>
       <p>Step 3: Open a terminal of choice and execute the following command:</p>
       <div>
