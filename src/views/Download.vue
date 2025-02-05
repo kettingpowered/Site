@@ -280,6 +280,7 @@ export default {
 
 .version-buttons {
   width: 50vw;
+  margin: 0 auto;
 }
 
 @media (max-width: 1000px) {
