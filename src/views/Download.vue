@@ -73,7 +73,7 @@ export default {
       this.loaded = true;
     },
     parseXML(xml) {
-      const parser = new DOMParser();;
+      const parser = new DOMParser();
       const doc = parser.parseFromString(xml, 'text/xml');
       doc.getElementsByTagName("metadata")[0]
          .getElementsByTagName("versioning")[0]
