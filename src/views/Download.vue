@@ -58,7 +58,9 @@ export default {
       selectedRelease: null,
       loaded: false,
       errored: false,
-      activeDetails: null
+      activeDetails: null,
+      showAll: false,
+      visibleCount: 10,
     };
   },
   methods: {
@@ -191,7 +193,7 @@ export default {
         </div>
         <div class="version-buttons">
           <DownloadButton
-            v-for="version in versions"
+            v-for="version in versions.slice(0, showAll ? versions.length : visibleCount)"
             :key="version"
             :kettingVersion="version.split('-')[2]"
             :mcVersion="mcVersion"
@@ -202,6 +204,9 @@ export default {
             :duplicate="isDuplicate(version)"
             @toggle-details="toggleDetails(version)"
           />
+          <button v-if="versions.length > visibleCount" @click="showAll = !showAll" class="show-all-button">
+            {{ showAll ? 'Show Less' : 'Show All' }}
+          </button>
         </div>
       </div>
     </div>
@@ -281,6 +286,26 @@ export default {
 .version-buttons {
   width: 50vw;
   margin: 0 auto;
+}
+
+.show-all-button {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: var(--color-background-soft);
+  color: var(--color-text);
+  border-radius: 15px;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 1em;
+  user-select: none;
+  cursor: pointer;
+  padding: 2px 10px;
+  border: 2px solid var(--color-background-mute);
+}
+
+.show-all-button:hover {
+  background-color: var(--color-link-hover);
+  color: var(--color-background-soft);
 }
 
 @media (max-width: 1000px) {
