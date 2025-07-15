@@ -78,7 +78,7 @@ export const createApp = ViteSSG(
             githubUrl: "https://github.com/kettingpowered/",
             launcherUrl: "https://launcher.kettingpowered.org/",
             imageUrl: "https://github.com/kettingpowered.png",
-            downloadUrl: "https://repo.kettingpowered.org/Ketting-Server-Releases/org/kettingpowered/server/forge/maven-metadata.xml",
+            downloadUrl: "https://reposilite.c0d3m4513r.com/Ketting-Server-Releases/org/kettingpowered/server/forge/maven-metadata.xml",
             featherInstallUrl: "https://youtu.be/Vt0MdkmhkXA",
             softwareUrl: function(version) {
                 if (version.startsWith("1.20")) {
